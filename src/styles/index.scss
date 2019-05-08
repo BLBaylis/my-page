@@ -1,0 +1,67 @@
+@import "~bootstrap/scss/bootstrap";
+
+body, html {
+    height: 100%
+}
+
+/*.display-3 {
+    font-size: 2.5rem
+}
+
+.display-4 {
+    font-size: 2rem
+}
+
+@media (min-width: 319px) and (min-width: 568px) {
+    .display-3 {
+        font-size: 3rem
+    }
+
+    .display-4 {
+        font-size: 2.5rem
+    }
+}*/
+
+#main {
+    top: 56px;
+    height: calc(100% - 56px);
+}
+
+.navbar {
+    z-index: 3
+}
+
+.avatar__wrapper {
+    height: 66vw;
+    width: 66vw;
+    max-height: 300px;
+    max-width: 300px;
+}
+
+.avatar__img {
+    z-index: 2;
+}
+
+@keyframes pulse {
+  to {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.avatar__wrapper::before {
+  animation: pulse 2s linear infinite;
+  border: #000 solid 8px;
+  border-radius: 9999px;
+  box-sizing: border-box;
+  content: ' ';
+  height: 120%;
+  left: -10%;
+  opacity: .6;
+  position: absolute;
+  top: -10%;
+  transform: scale(0.714);
+  width: 120%;
+  z-index: 1;
+}
+
