@@ -32,16 +32,16 @@
     <div class="collapse navbar-collapse navbar-custom" id="navbarDropdowns">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link text-white" href="#home">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">About Me</a>
+          <a class="nav-link text-white" href="#about">About Me</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Portfolio</a>
+          <a class="nav-link text-white" href="#portfolio">Portfolio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#">Contact</a>
+          <a class="nav-link text-white" href="#contact">Contact</a>
         </li>
       </ul>
     </div>
@@ -93,7 +93,7 @@
           <!--  THUMBNAIL  -->
 
         <div type="button" data-toggle="modal" data-target="#tictactoeModal" class = "my-4 bg-white project-entry overflow-hidden position-relative">
-          <img class = "img-fluid project-entry__img" src= "<%= require('./src/assets/images/tictactoe.png') %>">
+          <img class = "img-fluid project-entry__img" src= "<%= require('./src/assets/images/screenshot-tictactoe.png') %>">
           <div class = "project-entry__img-overlay d-flex flex-column justify-content-between position-absolute w-100 h-100">
             <h4 class = "text-white position-relative my-2 project-entry__title">Unbeatable Tic-tac-toe</h4>
             <div class = "project-entry__logo-div h-25 d-flex justify-content-center align-items-center">
@@ -117,9 +117,9 @@
                 </button>
               </div>
               <div class="modal-body text-left">
-                <video class = "pa-1 rounded modal-video" width="100%" height="auto" autoplay loop>
-                  <source src="<%= require('./src/assets/videos/tictactoe-demo.mp4') %>" type="video/mp4">
-                  <source src="<%= require('./src/assets/videos/tictactoe-demo.mp4') %>" type="video/webm">
+                <video class = "pa-1 rounded modal-video" width="100%" height="auto" autoplay = "autoplay" loop muted>
+                  <source src="<%= require('./src/assets/videos/video-tictactoe-demo.mp4') %>" type="video/mp4">
+                  <source src="<%= require('./src/assets/videos/video-tictactoe-demo.mp4') %>" type="video/webm">
                   Your browser does not support the video tag.
                 </video>
                 <p>A tictactoe game made with React and Material-UI, it boasts the following features:
@@ -144,7 +144,7 @@
         <!--  THUMBNAIL  -->
 
         <div type="button" data-toggle="modal" data-target="#facebrainModal" class = "my-4 bg-white project-entry overflow-hidden position-relative">
-          <img class = "img-fluid project-entry__img" src= "<%= require('./src/assets/images/facebrain.png') %>">
+          <img class = "img-fluid project-entry__img" src= "<%= require('./src/assets/images/screenshot-facebrain.png') %>">
           <div class = "project-entry__img-overlay d-flex flex-column justify-content-between position-absolute w-100 h-100">
             <h4 class = "text-white position-relative my-2 project-entry__title">FaceBrain</h4>
             <div class = "project-entry__logo-div h-25 d-flex justify-content-center align-items-center">
@@ -168,9 +168,9 @@
                 </button>
               </div>
               <div class="modal-body text-left">
-                <video class = "pa-1 rounded modal-video" width="100%" height="auto" autoplay loop>
-                  <source src="<%= require('./src/assets/videos/facebrain-demo.mp4') %>" type="video/mp4">
-                  <source src="<%= require('./src/assets/videos/facebrain-demo.mp4') %>" type="video/webm">
+                <video class = "pa-1 rounded modal-video" width="100%" height="auto" autoplay = "autoplay" loop muted>
+                  <source src="<%= require('./src/assets/videos/video-facebrain-demo.mp4') %>" type="video/mp4">
+                  <source src="<%= require('./src/assets/videos/video-facebrain-demo.mp4') %>" type="video/webm">
                   Your browser does not support the video tag.
                 </video>
                 <p>This tool uses Clarifai's face recognition API to find faces in submitted URLS.  Features include:
