@@ -1,29 +1,27 @@
 @import "~bootstrap/scss/bootstrap";
 
-.navbar-custom {
-
+html,
+body {
+    height: 100%;
 }
 
 .display-3 {
-    font-size: 2.5rem
+    font-size: 2.5rem;
 }
 
 .display-4 {
-    font-size: 2rem
-}
-
-#main {
-    top: 56px;
-}
-
-.home-wrapper {
-    background: #7B2D26
+    font-size: 2rem;
 }
 
 #home {
-    height: calc(100vh - 56px);
+    background: #7b2d26;
+    height: 100%;
     min-height: 424px;
-    background: #7B2D26
+}
+
+.home-inner {
+    top: 56px;
+    height: calc(100% - 56px);
 }
 
 #about {
@@ -31,9 +29,13 @@
     background: #f7f9fb;
 }
 
+#portfolio {
+    background: #383838;
+}
+
 .navbar {
     z-index: 3;
-    background: #383838
+    background: #383838;
 }
 
 .navbar__toggler {
@@ -56,26 +58,26 @@
 }
 
 @keyframes pulse {
-  to {
-    opacity: 0;
-    transform: scale(1);
-  }
+    to {
+        opacity: 0;
+        transform: scale(1);
+    }
 }
 
 .avatar__wrapper::before {
-  animation: pulse 2s linear infinite;
-  border: #fff solid 8px;
-  border-radius: 9999px;
-  box-sizing: border-box;
-  content: ' ';
-  height: 120%;
-  left: -10%;
-  opacity: .6;
-  position: absolute;
-  top: -10%;
-  transform: scale(0.714);
-  width: 120%;
-  z-index: 1;
+    animation: pulse 2s linear infinite;
+    border: #fff solid 8px;
+    border-radius: 9999px;
+    box-sizing: border-box;
+    content: " ";
+    height: 120%;
+    left: -10%;
+    opacity: 0.6;
+    position: absolute;
+    top: -10%;
+    transform: scale(0.714);
+    width: 120%;
+    z-index: 1;
 }
 
 .intro-headers {
@@ -83,7 +85,7 @@
 }
 
 .intro-headers__linebreak {
-    border-color: #fff
+    border-color: #fff;
 }
 
 .project-entry__img-overlay {
@@ -91,7 +93,7 @@
     top: 0;
     left: 0;
     z-index: 1;
-    background-color: rgba(0,0,0,.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .project-entry__title {
@@ -106,7 +108,7 @@
 
 .project-entry:hover .project-entry__img {
     transform: scale(1.1) rotate(5deg);
-    transition: all 2s cubic-bezier(.23,1,.32,1);
+    transition: all 2s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .project-entry:hover .project-entry__img-overlay {
@@ -120,4 +122,8 @@
 
 .project-entry:hover .project-entry__bottom-text {
     bottom: 0;
+}
+
+.modal-video {
+    border: 1px solid #ddd;
 }

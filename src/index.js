@@ -1,10 +1,11 @@
-require('normalize.css/normalize.css');
-require('./styles/index.scss');
+require("normalize.css/normalize.css");
+require("./styles/index.scss");
 
-import PopperJs from 'popper.js';
-import jquery from 'jquery';
-import 'bootstrap/js/dist/collapse';
+import PopperJs from "popper.js";
+import jquery from "jquery";
+import "bootstrap/js/dist/collapse";
+import "bootstrap/js/dist/modal";
 
-jquery(()=>{
-    console.log('Hello jQuery + bootstrap 4!');
+jquery(() => {
+    console.log("Hello jQuery + bootstrap 4!");
 });
