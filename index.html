@@ -23,25 +23,27 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg w-100 position-absolute">
-    <a class="navbar-brand text-white" href="#">Bradley Baylis</a>
-    <button class="navbar-toggler navbar__toggler" type="button" data-toggle="collapse" data-target="#navbarDropdowns" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-sm w-100 position-fixed p-0">
+    <a class="navbar-brand text-white py-0 px-2 d-flex align-items-center" href="#">
+      <img class = "navbar__logo" src = "<%= require('./src/assets/logo.svg') %>">
+    </a>
+    <button class="navbar-toggler navbar__toggler m-2" type="button" data-toggle="collapse" data-target="#navbarDropdowns" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse navbar-custom" id="navbarDropdowns">
-      <ul class="navbar-nav mr-auto">
+    <div class="collapse navbar-collapse" id="navbarDropdowns">
+      <ul class="navbar-nav ml-auto mr-2">
         <li class="nav-item">
-          <a class="nav-link text-white" href="#home">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link text-white px-2 py-0" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#about">About Me</a>
+          <a class="nav-link text-white px-2 py-0" href="#about-target">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#portfolio">Portfolio</a>
+          <a class="nav-link text-white px-2 py-0" href="#portfolio-target">Portfolio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#contact">Contact</a>
+          <a class="nav-link text-white px-2 py-0" href="#contact-target">Contact</a>
         </li>
       </ul>
     </div>
@@ -50,8 +52,8 @@
   <!-- HOME -->
 
   <div id = "home">
-      <div class="container-fluid d-flex flex-column justify-content-around col-lg-3 mx-auto text-center home-inner">
-          <div class = "mt-2 mt-sm-3 mt-lg-5 mb-2 px-0 mx-auto avatar">
+      <div class="container-fluid d-flex flex-column justify-content-around position-relative mx-auto text-center home-inner">
+          <div class = "my-2 mt-sm-3 mt-lg-5 px-0 mx-auto avatar">
               <div class = "position-relative mx-auto avatar__wrapper">
                   <img
                       src="<%= require('./src/assets/images/brad-original.jpg') %>"
@@ -59,40 +61,134 @@
                   >
               </div>
           </div>
-          <div class = "intro-headers">
+          <div class = "text-white mx-auto">
               <h1 class = "display-3">Bradley Baylis</h1>
-              <hr class = "intro-headers__linebreak">
+              <hr class = "linebreak">
               <h2 class = "display-4">Front End Developer</h2>
           </div>
+          <!--<a rel = "noopener noreferrer" class = "btn btn-primary" href = "./BBaylis_CV.pdf" target = "_blank">My CV</a>-->
       </div>
     </div>
 
   <main role="main" class="container-fluid px-0 text-center" id = "main">
 
     <!--  ABOUT -->
-
+    <div class = "nav-link-target" id = "about-target"></div>
     <div class="container-fluid py-3 text-left" id = "about">
-      <h3 class = "text-center">About Me</h3>
-      <p>The standard Lorem Ipsum passage, used since the 1500s
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-      </p>
-      <p>
-        Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-      </p>
+      <div class = "container">
+        <h3 class = "text-center mb-3">About Me</h3>
+        <p class = "px-2">Hi! My name is Brad and I'm primarily a front end
+          developer based near London, though I have an interest in full stack
+          development and want to move further in that direction.
+        </p>
+        <p class = "px-2">I use technologies and frameworks such as Bootstrap,
+          Material-UI and React to deliver front end projects.  I've also got
+          experience including Node.js and PostgreSQL to add additional
+          functionality.
+        </p>
+        <h4 class = "h6">Things I like</h4>
+        <ul class = "my-3">
+          <li>
+            Games, TV and film
+            <span>🎮</span>
+            <span>📺</span>
+            <span>🎬</span>
+          </li>
+          <li>
+            Reading, quizzing and otherwise learning
+            <span>📚</span>
+            <span>🎓</span>
+          </li>
+          <li>
+            Physical pursuits like playing football, climbing, scenic strolls
+            with my dog Jazz
+            <span>🐶</span>
+            or just a good stretching session!
+            <span>⚽</span>
+            <span>🧗‍</span>
+            <span>🧘</span>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <!--  PORTFOLIO -->
-
+    <div class = "nav-link-target" id = "portfolio-target"></div>
     <div class = "py-3 container-fluid text-white" id = "portfolio">
       <h3>Portfolio</h3>
       <div class = "col-xs-12 col-sm-8 col-lg-6 mx-auto">
 
-        <!--  TICTACTOE -->
+      <!--  BRADLEYBAYLIS.ME -->
 
-          <!--  THUMBNAIL  -->
+        <!--  THUMBNAIL DESKTOP -->
 
-        <div type="button" data-toggle="modal" data-target="#tictactoeModal" class = "my-4 bg-white project-entry overflow-hidden position-relative">
+        <button type="button" data-toggle="modal" data-target="#bradModal" class = "p-0 my-4 project-entry overflow-hidden position-relative" tabIndex = "0">
+            <img class = "img-fluid project-entry__img" src= "<%= require('./src/assets/images/screenshot-bradleybaylis.png') %>">
+            <div class = "project-entry__img-overlay d-flex flex-column justify-content-between position-absolute w-100 h-100">
+              <h4 class = "text-white position-relative my-2 project-entry__title">Bradleybaylis.me</h4>
+              <div class = "project-entry__logo-div h-25 d-flex justify-content-center align-items-center">
+                <img class="project-entry__logo h-100 mx-1" src="<%= require('./src/assets/bootstrap-logo.svg') %>">
+                <img class="project-entry__logo h-100 mx-1" src="<%= require('./src/assets/node-logo.svg') %>">
+                <img class="project-entry__logo h-25 mx-1" src="<%= require('./src/assets/nginx-logo.svg') %>">
+              </div>
+              <p class = "text-white position-relative my-2 project-entry__bottom-text">Front End and Deployment</p>
+            </div>
+          </button>
+
+          <!-- THUMBNAIL MOBILE -->
+
+        <button type="button" data-toggle="modal" data-target="#bradModal" class = "my-4 project-entry--responsive p-0 card" tabIndex = "0">
+          <div class = "card-header w-100">Bradleybaylis.me</div>
+          <img class = "card-img-top mt-3 mx-auto project-entry__img--responsive" src= "<%= require('./src/assets/images/screenshot-bradleybaylis.png') %>">
+          <div class = "card-body">
+            <div class = "h-50 d-flex justify-content-center align-items-center">
+              <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/bootstrap-logo.svg') %>">
+              <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/node-card-logo.svg') %>">
+              <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/nginx-logo.svg') %>">
+            </div>
+          </div>
+          <div class = "card-footer w-100 text-muted">Front End and Deployment</div>
+        </button>
+
+          <!--  MODAL -->
+
+          <div class="text-dark modal fade" id="bradModal" tabindex="-1" role="dialog" aria-labelledby="bradModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="bradModalLabel">BradleyBaylis.me</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body text-left">
+                  <video class = "pa-1 rounded modal-video" width="100%" height="auto" autoplay = "autoplay" loop muted>
+                    <source src="<%= require('./src/assets/videos/video-tictactoe-demo.mp4') %>" type="video/mp4">
+                    <source src="<%= require('./src/assets/videos/video-tictactoe-demo.mp4') %>" type="video/webm">
+                    Your browser does not support the video tag.
+                  </video>
+                  <p>Bradleybaylis.me is my personal site hosted on a Digital Ocean VPS running Ubuntu and Node.js.  The main page utilises Bootstrap 4.
+                    <ul>
+                      <li>Fully Responsive Design</li>
+                      <li>Hosts my other projects on the same domain</li>
+                      <li>Uses Nodemailer to enable you to send me emails for the page</li>
+                      <li>Provides and Node/Express API to give my tic-tac-toe project more functionality and enables the aforementioned contact form</li>
+                    </ul>
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <a href = "/" type="button" class="btn btn-primary">Live Demo</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+      <!--  TICTACTOE -->
+
+        <!--  THUMBNAIL DESKTOP -->
+
+        <button type="button" data-toggle="modal" data-target="#tictactoeModal" class = "p-0 my-4 project-entry overflow-hidden position-relative" tabIndex = "0">
           <img class = "img-fluid project-entry__img" src= "<%= require('./src/assets/images/screenshot-tictactoe.png') %>">
           <div class = "project-entry__img-overlay d-flex flex-column justify-content-between position-absolute w-100 h-100">
             <h4 class = "text-white position-relative my-2 project-entry__title">Unbeatable Tic-tac-toe</h4>
@@ -103,7 +199,22 @@
             </div>
             <p class = "text-white position-relative my-2 project-entry__bottom-text">Front End</p>
           </div>
-        </div>
+        </button>
+
+        <!-- THUMBNAIL MOBILE -->
+
+        <button type="button" data-toggle="modal" data-target="#tictactoeModal" class = "my-4 project-entry--responsive p-0 card" tabIndex = "0">
+          <div class = "card-header w-100">Unbeatable Tic-tac-toe</div>
+          <img class = "card-img-top mt-3 mx-auto project-entry__img--responsive" src= "<%= require('./src/assets/images/screenshot-tictactoe.png') %>">
+          <div class = "card-body">
+            <div class = "h-50 d-flex justify-content-center align-items-center">
+              <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/javascript-logo.svg') %>">
+              <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/react-logo.svg') %>">
+              <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/redux-logo.svg') %>">
+            </div>
+          </div>
+          <div class = "card-footer w-100 text-muted">Front End</div>
+        </button>
 
         <!--  MODAL -->
 
@@ -139,11 +250,11 @@
           </div>
         </div>
 
-      <!--  FACEBRAIN -->
+      <!-- FACEBRAIN -->
 
-        <!--  THUMBNAIL  -->
+        <!-- THUMBNAIL DESKTOP -->
 
-        <div type="button" data-toggle="modal" data-target="#facebrainModal" class = "my-4 bg-white project-entry overflow-hidden position-relative">
+        <button type="button" data-toggle="modal" data-target="#facebrainModal" class = "my-4 p-0 project-entry overflow-hidden position-relative" tabIndex = "0">
           <img class = "img-fluid project-entry__img" src= "<%= require('./src/assets/images/screenshot-facebrain.png') %>">
           <div class = "project-entry__img-overlay d-flex flex-column justify-content-between position-absolute w-100 h-100">
             <h4 class = "text-white position-relative my-2 project-entry__title">FaceBrain</h4>
@@ -154,7 +265,23 @@
             </div>
             <p class = "text-white position-relative my-2 project-entry__bottom-text">Full Stack</p>
           </div>
-        </div>
+        </button>
+
+        <!-- THUMBNAIL MOBILE -->
+
+        <button type="button" data-toggle="modal" data-target="#facebrainModal" class = "my-4 project-entry--responsive p-0 card" tabIndex = "0">
+          <div class = "card-header w-100">FaceBrain</div>
+          <img class = "card-img-top mt-3 mx-auto project-entry__img--responsive" src= "<%= require('./src/assets/images/screenshot-facebrain.png') %>">
+          <div class = "card-body">
+            <div class = "h-50 d-flex justify-content-center align-items-center">
+              <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/react-logo.svg') %>">
+              <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/node-card-logo.svg') %>">
+              <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/postgres-logo.svg') %>">
+            </div>
+          </div>
+          <div class = "card-footer w-100 text-muted">Full Stack</div>
+        </button>
+
 
         <!-- MODAL -->
 
@@ -194,9 +321,46 @@
     </div>
 
     <!--  CONTACT -->
-
-    <div id = "contact">
+    <div class = "nav-link-target" id = "contact-target"></div>
+    <div class = "container-fluid py-3" id = "contact">
+      <h3 class = "text-white">Get in touch</h3>
+      <a class = "btn social-media-link m-3" href = "https://github.com/BLBaylis">
+        <img class="social-media-logo" src="<%= require('./src/assets/linkedin-logo.svg') %>">
+      </a>
+      <a class = "btn social-media-link m-3" href = "https://www.linkedin.com/in/bradley-baylis/">
+        <img class="social-media-logo" src="<%= require('./src/assets/github-logo.svg') %>">
+      </a>
+      <h4 class = "text-white">...or you can send me an email below!</h4>
+      <div class="alert position-relative mt-3" role="alert">
+        <strong class = "email-status">Email sent!</strong>
+        <span class = "alert-text">Thanks for getting in touch.</span>
+      </div>
+      <form class = "col-md-6 mx-auto mb-3 py-4 bg-white contact-form">
+        <div class = "row">
+          <div class="form-group col-sm-6">
+            <label for="name">Name:</label>
+            <input required type="name" class="form-control" id="name" placeholder="Name">
+          </div>
+          <div class="form-group col-sm-6">
+            <label for="email">Email address:</label>
+            <input required type="email" class="form-control" id="email" placeholder="Email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea required class="form-control" id="message" rows="3"></textarea>
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary d-inline-flex align-items-center"
+          id="form-submit-btn"
+        >
+          <span>Submit</span>
+          <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+        </button>
+      </form>
     </div>
   </main>
+  <footer class = "position-relative text-white d-flex justify-content-center align-items-center">Website created by © Bradley Baylis 2019</footer>
 </body>
 </html>
