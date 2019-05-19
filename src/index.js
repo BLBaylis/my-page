@@ -31,6 +31,7 @@ const handleFormSubmit = async event => {
     event.preventDefault();
     let errCaught = false;
     let res = false;
+    let outcome;
     const alert = $(".alert");
     const contactForm = $(".contact-form");
     const toggleLoaderAnimation = () =>
@@ -42,7 +43,9 @@ const handleFormSubmit = async event => {
     } catch (err) {
         errCaught = true;
     }
-    const outcome = await res.json();
+    if (!errCaught) {
+      outcome = await res.json();
+    }
     toggleLoaderAnimation();
     const wasEmailSuccessful = !errCaught && res.ok && outcome === "success";
     if (!contactForm.hasClass("initial-animation-done")) {

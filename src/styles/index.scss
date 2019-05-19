@@ -1,4 +1,5 @@
 @import "~bootstrap/scss/bootstrap";
+@import './keyframes';
 
 $navbar-height: 56px;
 $alert-size-xs: 74px;
@@ -9,38 +10,7 @@ body {
     height: 100%;
 }
 
-.display-3 {
-    font-size: 2.5rem;
-}
-
-.display-4 {
-    font-size: 2rem;
-}
-
-#home {
-    background: #7b2d26;
-    height: 100%;
-    min-height: 424px;
-}
-
-.home-inner {
-    top: $navbar-height;
-    height: calc(100% - #{$navbar-height});
-}
-
-.nav-link-target {
-    position: relative;
-    top: -#{$navbar-height};
-}
-
-#about {
-    color: #383838;
-    background: #f7f9fb;
-}
-
-#portfolio {
-    background: #383838;
-}
+/* NAVBAR */
 
 .navbar {
     z-index: 3;
@@ -51,49 +21,52 @@ body {
     height: $navbar-height;
 }
 
+.navbar-logo {
+    height: 40px;
+    width: auto;
+}
+
+.navbar-toggler {
+    border-color: #fff;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
 .nav-item {
     height: $navbar-height;
     line-height: $navbar-height;
 }
 
 .nav-link:hover,
-.navbar__toggler:hover,
+.navbar-toggler:hover,
 .navbar-brand:hover {
     background: #474646;
 }
 
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+.nav-link-target {
+    position: relative;
+    top: -#{$navbar-height};
 }
 
-.navbar__logo {
-    height: 40px;
-    width: auto;
+/* HOME */
+
+.home {
+    background: #7b2d26;
+    min-height: 424px;
+    padding-top: $navbar-height;
+    justify-content: space-around
 }
 
-.navbar__toggler {
-    border-color: #fff;
-}
-
-.avatar__wrapper {
+.avatar {
     height: 66vw;
     width: 66vw;
     max-height: 300px;
     max-width: 300px;
 }
 
-.avatar__img {
-    z-index: 2;
-}
-
-@keyframes pulse {
-    to {
-        opacity: 0;
-        transform: scale(1);
-    }
-}
-
-.avatar__wrapper::before {
+.avatar::before {
     animation: pulse 2s linear infinite;
     border: #fff solid 8px;
     border-radius: 9999px;
@@ -109,8 +82,39 @@ body {
     z-index: 1;
 }
 
-.linebreak {
-    border-color: #fff;
+.avatar__img {
+    z-index: 2;
+}
+
+@keyframes pulse {
+    to {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+.display-3 {
+    font-size: 2.5rem;
+}
+
+.display-4 {
+    font-size: 2rem;
+    vertical-align: text-top;
+}
+
+/* FONT SIZES WILL BE ADJUSTED IN MEDIA QUERY AT BOTTOM*/
+
+/* ABOUT */
+
+.about {
+    color: #383838;
+    background: #f7f9fb;
+}
+
+/* PORTFOLIO */
+
+.portfolio {
+    background: #383838;
 }
 
 .project-entry__img--responsive {
@@ -124,7 +128,8 @@ body {
 
 .project-entry {
     display: none;
-    box-sizing: content-box;
+    width: 100%;
+    max-width: 960px;
 }
 
 .project-entry:hover,
@@ -172,30 +177,22 @@ body {
     border: 1px solid #ddd;
 }
 
-#contact {
+/* CONTACT */
+
+.contact {
     background: #7b2d26;
 }
 
-.contact-form {
-    position: relative;
-    top: calc(-#{$alert-size-xs} - 1rem);
-    border: solid #f7f7f9 3.2px;
+.social-media-link {
+    width: 60px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    padding: 10px;
+    background: #383838
 }
 
-.form-control {
-    border-width: 1.5px;
-}
-
-.initial-animation {
-    animation: slingshot-xs 0.5s;
-}
-
-.initial-animation-footer {
-    animation: slingshot-xs-footer 0.5s;
-}
-
-.initial-animation-done {
-    top: 0px;
+.social-media-link:hover {
+    background: #383838;
 }
 
 .alert {
@@ -211,46 +208,26 @@ body {
     display: block;
 }
 
-@keyframes slingshot-xs {
-    0% {
-        top: calc(-#{$alert-size-xs} - 1rem);
-    }
-    25% {
-        top: calc(-#{$alert-size-xs} - 5px - 1rem);
-    }
-    100% {
-        top: 0px;
-    }
+.contact-form {
+    position: relative;
+    top: calc(-#{$alert-size-xs} - 1rem);
+    border: solid #f7f7f9 3.2px;
 }
 
-@keyframes slingshot-xs-footer {
-    25% {
-        top: calc(-#{$alert-size-xs} - 1rem);
-    }
-    100% {
-        top: 0px;
-    }
+.inital-animation {
+    animation: slingshot-xs 0.5s;
 }
 
-@keyframes slingshot-sm {
-    0% {
-        top: calc(-#{$alert-size-sm} - 1rem);
-    }
-    25% {
-        top: calc(-#{$alert-size-sm} - 5px - 1rem);
-    }
-    100% {
-        top: 0px;
-    }
+.initial-animation-footer {
+    animation: slingshot-xs-footer 0.5s;
 }
 
-@keyframes slingshot-sm-footer {
-    25% {
-        top: calc(-#{$alert-size-sm} - 1rem);
-    }
-    100% {
-        top: 0px;
-    }
+.initial-animation-done {
+    top: 0px;
+}
+
+.form-control {
+    border-width: 1.5px;
 }
 
 .lds-ring {
@@ -295,26 +272,6 @@ body {
     animation-play-state: running;
 }
 
-@keyframes lds-ring {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.social-media-link {
-    width: 60px;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    padding: 10px;
-}
-
-.social-media-link:hover {
-    background: #383838;
-}
-
 footer {
     top: calc(-#{$alert-size-xs} - 1rem);
     height: calc(#{$alert-size-xs} + 1rem);
@@ -322,13 +279,6 @@ footer {
 }
 
 @media (min-width: 370px) {
-    .project-entry {
-        display: block;
-    }
-
-    .project-entry--responsive {
-        display: none;
-    }
 
     .contact-form {
         top: calc(-#{$alert-size-sm} - 1rem);
@@ -349,5 +299,43 @@ footer {
 
     .initial-animation-footer {
         animation: slingshot-sm-footer 0.5s;
+    }
+}
+
+@media (min-height: 750px) {
+    .home {
+        justify-content: center;
+    }
+
+    .avatar {
+        margin-bottom: 3rem;
+    }
+
+    .display-3 {
+        font-size: 4.5rem
+    }
+
+    .display-4 {
+        font-size: 3.5rem
+    }
+
+    hr {
+        border-width: 2px
+    }
+
+
+}
+
+@media (hover: hover) {
+    .project-entry {
+        display: block;
+    }
+
+    .project-entry--responsive {
+        display: none;
+    }
+
+    .social-media-link {
+        background: transparent
     }
 }
