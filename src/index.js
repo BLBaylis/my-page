@@ -66,7 +66,7 @@ const sendForm = async event => {
     const name = $("#name").val();
     const email = $("#email").val();
     const message = $("#message").val();
-    return await fetch("http://localhost:4000/contact", {
+    return await fetch(`${process.env.API_LINK}/contact`, {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, message })
