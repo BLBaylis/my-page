@@ -62,6 +62,11 @@ module.exports = {
             },
             {
                 // Load all images as base64 encoding if they are smaller than 8192 bytes
+                test: /\.(pdf)$/,
+                use: 'file-loader',
+            },
+            {
+                // Load all images as base64 encoding if they are smaller than 8192 bytes
                 test: /\.(svg|png|jpg|gif)$/,
                 use: [
                     {
