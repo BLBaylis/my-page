@@ -1,5 +1,5 @@
 const path = require('path');
-
+const Dotenv = require('dotenv-webpack');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin'); //installed via npm
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -93,6 +93,7 @@ module.exports = {
             inject: 'body',
         }),
         new CleanWebpackPlugin(buildPath),
+        new Dotenv(),
         new FaviconsWebpackPlugin({
             // Your source logo
             logo: './src/assets/icon.png',

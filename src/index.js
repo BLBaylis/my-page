@@ -1,3 +1,4 @@
+require('dotenv').config();
 require("normalize.css/normalize.css");
 require("./styles/index.scss");
 
@@ -44,7 +45,7 @@ const handleFormSubmit = async event => {
         errCaught = true;
     }
     if (!errCaught) {
-        outcome = await res.json();
+      outcome = await res.json();
     }
     toggleLoaderAnimation();
     const wasEmailSuccessful = !errCaught && res.ok && outcome === "success";
@@ -66,6 +67,7 @@ const sendForm = async event => {
     const name = $("#name").val();
     const email = $("#email").val();
     const message = $("#message").val();
+    console.log(process.env.API_LINK);
     return await fetch(`${process.env.API_LINK}/contact`, {
         method: "post",
         headers: { "Content-Type": "application/json" },
