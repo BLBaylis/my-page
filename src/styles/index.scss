@@ -1,9 +1,11 @@
-@import "~bootstrap/scss/bootstrap";
-@import './keyframes';
-
+$primary: #7b2d26;
+$secondary: #383838;
 $navbar-height: 56px;
 $alert-size-xs: 74px;
 $alert-size-sm: 50px;
+
+@import "~bootstrap/scss/bootstrap";
+@import "./keyframes";
 
 html,
 body {
@@ -14,7 +16,6 @@ body {
 
 .navbar {
     z-index: 3;
-    background: #383838;
 }
 
 .navbar-brand {
@@ -53,10 +54,9 @@ body {
 /* HOME */
 
 .home {
-    background: #7b2d26;
     min-height: 424px;
     padding-top: $navbar-height;
-    justify-content: space-around
+    justify-content: space-evenly;
 }
 
 .avatar {
@@ -97,12 +97,16 @@ body {
     font-size: 2.5rem;
 }
 
+hr {
+    border-color: #fff;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
 .display-4 {
     font-size: 2rem;
     vertical-align: text-top;
 }
-
-/* FONT SIZES WILL BE ADJUSTED IN MEDIA QUERY AT BOTTOM*/
 
 /* ABOUT */
 
@@ -113,11 +117,8 @@ body {
 
 /* PORTFOLIO */
 
-.portfolio {
-    background: #383838;
-}
-
 .project-entry__img--responsive {
+    max-width: 400px;
     width: 90%;
     border: 1px solid rgba(0, 0, 0, 0.125);
 }
@@ -129,7 +130,7 @@ body {
 .project-entry {
     display: none;
     width: 100%;
-    max-width: 960px;
+    max-width: 600px;
 }
 
 .project-entry:hover,
@@ -177,18 +178,18 @@ body {
     border: 1px solid #ddd;
 }
 
-/* CONTACT */
-
-.contact {
-    background: #7b2d26;
+.brad-modal-grid {
+    align-items: stretch;
 }
+
+/* CONTACT */
 
 .social-media-link {
     width: 60px;
     border-radius: 50%;
     border: 2px solid #fff;
     padding: 10px;
-    background: #383838
+    background: #383838;
 }
 
 .social-media-link:hover {
@@ -198,6 +199,7 @@ body {
 .alert {
     top: 0;
     transition: top 0.25s linear;
+    max-width: 600px;
 }
 
 .alert-change {
@@ -212,6 +214,7 @@ body {
     position: relative;
     top: calc(-#{$alert-size-xs} - 1rem);
     border: solid #f7f7f9 3.2px;
+    max-width: 600px;
 }
 
 .inital-animation {
@@ -278,8 +281,27 @@ footer {
     background: #383838;
 }
 
-@media (min-width: 370px) {
+@media (max-width: 542px) {
+    .modal-btn {
+        font-size: 14.75px;
+    }
 
+    .brad-modal-grid {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        grid-gap: 0.25rem;
+        justify-content: center;
+    }
+
+    .brad-modal-grid-item {
+        width: 100%;
+        height: 100%;
+        margin: 0 !important;
+    }
+}
+
+@media (min-width: 370px) {
     .contact-form {
         top: calc(-#{$alert-size-sm} - 1rem);
     }
@@ -302,28 +324,26 @@ footer {
     }
 }
 
+@media (min-width: 576px) {
+    .project-entry__logo--responsive {
+        width: 10%;
+    }
+}
+
 @media (min-height: 750px) {
-    .home {
-        justify-content: center;
-    }
-
-    .avatar {
-        margin-bottom: 3rem;
-    }
-
     .display-3 {
-        font-size: 4.5rem
+        font-size: 4.5rem;
     }
 
     .display-4 {
-        font-size: 3.5rem
+        font-size: 3.5rem;
     }
 
     hr {
-        border-width: 2px
+        border-width: 2px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
-
-
 }
 
 @media (hover: hover) {
@@ -336,6 +356,6 @@ footer {
     }
 
     .social-media-link {
-        background: transparent
+        background: transparent;
     }
 }

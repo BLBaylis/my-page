@@ -44,7 +44,7 @@ const handleFormSubmit = async event => {
         errCaught = true;
     }
     if (!errCaught) {
-      outcome = await res.json();
+        outcome = await res.json();
     }
     toggleLoaderAnimation();
     const wasEmailSuccessful = !errCaught && res.ok && outcome === "success";

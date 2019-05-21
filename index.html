@@ -22,7 +22,7 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-sm w-100 position-fixed p-0">
+  <nav class="navbar navbar-expand-sm bg-secondary w-100 position-fixed p-0">
     <a class="navbar-brand text-white py-0 px-2 d-flex align-items-center" href="#">
       <img class = "navbar-logo" src = "<%= require('./src/assets/logo.svg') %>">
     </a>
@@ -50,27 +50,29 @@
 
   <!-- HOME -->
 
-  <section class="container-fluid text-center d-flex flex-column mx-auto h-100 home" id = "home">
+  <section class="container-fluid text-center d-flex flex-column bg-primary mx-auto h-100 home" id = "home">
     <div class = "position-relative mx-auto avatar">
       <img
-        src="<%= require('./src/assets/images/brad-original.jpg') %>"
+        src="<%= require('./src/assets/images/avatar-pic.jpg') %>"
         class="d-block position-relative h-100 mx-auto rounded-circle avatar__img"
       >
     </div>
-    <h1 class = "text-white mx-auto">
+    <h1 class = "text-white mx-auto my-0">
         <span class = "display-3">Bradley Baylis</span>
-        <hr style="border-color:#fff">
+        <hr/>
         <span class = "display-4">Full Stack Developer</span>
     </h1>
-    <!--<a rel = "noopener noreferrer" class = "btn btn-primary" href = "./BBaylis_CV.pdf" target = "_blank">My CV</a>-->
+    <a href = "#about-target">
+      <img class = "mx-auto" src="<%= require('./src/assets/chevron.svg') %>">
+    </a>
   </section>
 
   <main role="main" class="container-fluid px-0 text-center" id = "main">
 
     <!--  ABOUT -->
     <div class = "nav-link-target about" id = "about-target"></div>
-    <section class="container-fluid py-3 text-left" id = "about">
-      <div class = "container" style = "max-width:720px">
+    <section class="container-fluid py-3 text-left about" id = "about">
+      <div class = "container" style = "max-width:630px">
         <h2 class = "text-center mb-3">About Me</h2>
         <p class = "px-2">Hi! My name is Brad and I'm primarily a front end
           developer based near London, though I have an interest in full stack
@@ -104,12 +106,13 @@
             <span>🧘</span>
           </li>
         </ul>
+        <a style = "background:#7b2d26" rel = "noopener noreferrer" class = "btn btn-block text-white" href = "./Bradley-Baylis-CV.pdf" target = "_blank">My CV</a>
       </div>
     </section>
 
     <!--  PORTFOLIO -->
     <div class = "nav-link-target" id = "portfolio-target"></div>
-    <section class = "py-3 container-fluid text-white px-0 portfolio" id = "portfolio">
+    <section class = "py-3 container-fluid text-white px-0 bg-secondary" id = "portfolio">
       <h2>Portfolio</h2>
       <div class = "container">
 
@@ -122,9 +125,9 @@
             <div class = "project-entry__img-overlay d-flex flex-column justify-content-between position-absolute w-100 h-100">
               <h4 class = "text-white position-relative my-2 project-entry__title">Bradleybaylis.me</h4>
               <div class = "project-entry__logo-div h-25 d-flex justify-content-center align-items-center">
-                <img class="project-entry__logo h-100 mx-1" src="<%= require('./src/assets/bootstrap-logo.svg') %>">
-                <img class="project-entry__logo h-100 mx-1" src="<%= require('./src/assets/node-logo.svg') %>">
-                <img class="project-entry__logo h-25 mx-1" src="<%= require('./src/assets/nginx-logo.svg') %>">
+                <img class="project-entry__logo h-100 mx-3" src="<%= require('./src/assets/bootstrap-logo.svg') %>">
+                <img class="project-entry__logo h-100 mx-3" src="<%= require('./src/assets/node-logo.svg') %>">
+                <img class="project-entry__logo h-25 mx-3" src="<%= require('./src/assets/nginx-logo.svg') %>">
               </div>
               <p class = "text-white position-relative my-2 project-entry__bottom-text">Front End and Deployment</p>
             </div>
@@ -136,7 +139,7 @@
           <div class = "card-header w-100">Bradleybaylis.me</div>
           <img class = "card-img-top mt-3 mx-auto project-entry__img--responsive" src= "<%= require('./src/assets/images/screenshot-bradleybaylis.png') %>">
           <div class = "card-body">
-            <div class = "h-50 d-flex justify-content-around align-items-center">
+            <div class = "h-100 d-flex justify-content-around align-items-center justify-content-sm-center">
               <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/bootstrap-logo.svg') %>">
               <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/node-card-logo.svg') %>">
               <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/nginx-logo.svg') %>">
@@ -151,15 +154,15 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="bradModalLabel">BradleyBaylis.me</h5>
+                  <h5 class="modal-title" id="bradModalLabel">Bradleybaylis.me</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body text-left">
                   <video class = "pa-1 rounded modal-video" width="100%" height="auto" autoplay = "autoplay" loop muted>
-                    <source src="<%= require('./src/assets/videos/video-tictactoe-demo.mp4') %>" type="video/mp4">
-                    <source src="<%= require('./src/assets/videos/video-tictactoe-demo.mp4') %>" type="video/webm">
+                    <source src="<%= require('./src/assets/videos/video-bradleybaylis-demo.mp4') %>" type="video/mp4">
+                    <source src="<%= require('./src/assets/videos/video-bradleybaylis-demo.mp4') %>" type="video/webm">
                     Your browser does not support the video tag.
                   </video>
                   <p>Bradleybaylis.me is my personal site hosted on a Digital Ocean VPS running Ubuntu and Node.js.  The main page utilises Bootstrap 4.
@@ -171,9 +174,11 @@
                     </ul>
                   </p>
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <a href = "/" type="button" class="btn btn-primary">Live Demo</a>
+                <div class="modal-footer brad-modal-grid">
+                  <button type="button" class="btn btn-secondary brad-modal-grid-item" data-dismiss="modal">Close</button>
+                  <a href = "https://github.com/BLBaylis/my-page" role="button" class="btn btn-secondary brad-modal-grid-item">View Front End Repo</a>
+                  <a href = "https://github.com/BLBaylis/bradnet" role="button" class="btn btn-secondary brad-modal-grid-item">View API Repo</a>
+                  <a href = "#" class="btn btn-primary brad-modal-grid-item">Live Demo</a>
                 </div>
               </div>
             </div>
@@ -188,9 +193,9 @@
           <div class = "project-entry__img-overlay d-flex flex-column justify-content-between position-absolute w-100 h-100">
             <h4 class = "text-white position-relative my-2 project-entry__title">Unbeatable Tic-tac-toe</h4>
             <div class = "project-entry__logo-div h-25 d-flex justify-content-center align-items-center">
-              <img class="project-entry__logo h-100 mx-1" src="<%= require('./src/assets/javascript-logo.svg') %>">
-              <img class="project-entry__logo h-100 mx-1" src="<%= require('./src/assets/react-logo.svg') %>">
-              <img class="project-entry__logo h-100 mx-1" src="<%= require('./src/assets/redux-logo.svg') %>">
+              <img class="project-entry__logo h-100 mx-3" src="<%= require('./src/assets/javascript-logo.svg') %>">
+              <img class="project-entry__logo h-100 mx-3" src="<%= require('./src/assets/react-logo.svg') %>">
+              <img class="project-entry__logo h-100 mx-3" src="<%= require('./src/assets/redux-logo.svg') %>">
             </div>
             <p class = "text-white position-relative my-2 project-entry__bottom-text">Front End</p>
           </div>
@@ -202,7 +207,7 @@
           <div class = "card-header w-100">Unbeatable Tic-tac-toe</div>
           <img class = "card-img-top mt-3 mx-auto project-entry__img--responsive" src= "<%= require('./src/assets/images/screenshot-tictactoe.png') %>">
           <div class = "card-body">
-            <div class = "h-50 d-flex justify-content-around align-items-center">
+            <div class = "h-100 d-flex justify-content-around align-items-center justify-content-sm-center">
               <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/javascript-logo.svg') %>">
               <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/react-logo.svg') %>">
               <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/redux-logo.svg') %>">
@@ -238,8 +243,9 @@
                 </p>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <a href = "/tictactoe" type="button" class="btn btn-primary">Live Demo</a>
+                <button type="button" class="btn btn-secondary  modal-btnh-100" data-dismiss="modal">Close</button>
+                <a href = "https://github.com/BLBaylis/tic-tac-toe" role="button" class="btn btn-secondary modal-btn">View Repo</a>
+                <a href = "/tictactoe" type="button" class="btn btn-primary modal-btn">Live Demo</a>
               </div>
             </div>
           </div>
@@ -254,9 +260,9 @@
           <div class = "project-entry__img-overlay d-flex flex-column justify-content-between position-absolute w-100 h-100">
             <h4 class = "text-white position-relative my-2 project-entry__title">FaceBrain</h4>
             <div class = "project-entry__logo-div h-25 d-flex justify-content-center align-items-center">
-              <img class="project-entry__logo h-100 mx-1" src="<%= require('./src/assets/react-logo.svg') %>">
-              <img class="project-entry__logo h-100 mx-1" src="<%= require('./src/assets/node-logo.svg') %>">
-              <img class="project-entry__logo h-100 mx-1" src="<%= require('./src/assets/postgres-logo.svg') %>">
+              <img class="project-entry__logo h-100 mx-3" src="<%= require('./src/assets/react-logo.svg') %>">
+              <img class="project-entry__logo h-100 mx-3" src="<%= require('./src/assets/node-logo.svg') %>">
+              <img class="project-entry__logo h-100 mx-3" src="<%= require('./src/assets/postgres-logo.svg') %>">
             </div>
             <p class = "text-white position-relative my-2 project-entry__bottom-text">Full Stack</p>
           </div>
@@ -268,7 +274,7 @@
           <div class = "card-header w-100">FaceBrain</div>
           <img class = "card-img-top mt-3 mx-auto project-entry__img--responsive" src= "<%= require('./src/assets/images/screenshot-facebrain.png') %>">
           <div class = "card-body">
-            <div class = "h-50 d-flex justify-content-around align-items-center">
+            <div class = "h-100 d-flex justify-content-around align-items-center justify-content-sm-center">
               <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/react-logo.svg') %>">
               <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/node-card-logo.svg') %>">
               <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/postgres-logo.svg') %>">
@@ -305,8 +311,9 @@
                 </p>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <a href = "/facebrain" type="button" class="btn btn-primary">Live Demo</a>
+                <button type="button" class="btn btn-secondary  modal-btnh-100" data-dismiss="modal">Close</button>
+                <a href = "https://github.com/BLBaylis/facebrain" role="button" class="btn btn-secondary modal-btn">View Repo</a>
+                <a href = "/facebrain" type="button" class="btn btn-primary modal-btn">Live Demo</a>
               </div>
             </div>
           </div>
@@ -317,7 +324,7 @@
 
     <!--  CONTACT -->
     <div class = "nav-link-target" id = "contact-target"></div>
-    <section class = "container-fluid py-3 contact" id = "contact">
+    <section class = "container-fluid py-3 contact bg-primary" id = "contact">
       <div class = "container">
         <h2 class = "text-white">Get in touch</h2>
         <a class = "btn social-media-link m-3" href = "https://github.com/BLBaylis">
@@ -327,7 +334,7 @@
           <img class="social-media-logo" src="<%= require('./src/assets/github-logo.svg') %>">
         </a>
         <h4 class = "text-white">...or you can send me an email below!</h4>
-        <div class="alert position-relative mt-3" role="alert">
+        <div class="alert mx-auto position-relative mt-3" role="alert">
           <strong class = "email-status">Email sent!</strong>
           <span class = "alert-text">Thanks for getting in touch.</span>
         </div>
