@@ -1,6 +1,7 @@
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require("webpack");
 
 module.exports = {
     devtool: 'eval-cheap-module-source-map',
@@ -90,5 +91,10 @@ module.exports = {
             inject: true
         }),
         new Dotenv(),
+        new webpack.ProvidePlugin({
+            "$":"jquery",
+            "jQuery":"jquery",
+            "window.jQuery":"jquery"
+          }),
     ]
 };

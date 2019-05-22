@@ -10,8 +10,15 @@ import "bootstrap/js/dist/modal";
 import "bootstrap/js/dist/alert";
 
 $(() => {
+    $.easing.easeInOutExpo = function (x, t, b, c, d) {
+        if (t==0) return b;
+        if (t==d) return b+c;
+        if ((t/=d/2) < 1) return c/2 * Math.pow(2, 10 * (t - 1)) + b;
+        return c/2 * (-Math.pow(2, -10 * --t) + 2) + b;
+    };
     const contactForm = $(".contact-form");
-    $(".nav-link").on("click", collapseMobileNavbar);
+    $(".nav-link").on("click", event => {animateScroll(event); collapseMobileNavbar(event)});
+    $(".scroll-link").on("click", animateScroll);
     contactForm.on("submit", handleFormSubmit);
     contactForm.on("animationend", () => {
         contactForm.toggleClass("initial-animation-done initial-animation");
@@ -20,6 +27,20 @@ $(() => {
         );
     });
 });
+
+const animateScroll = event => {
+    const eventTarget = event.target;
+    console.log(eventTarget);
+    if (location.pathname.replace(/^\//, '') == eventTarget.pathname.replace(/^\//, '') && location.hostname == eventTarget.hostname) {
+        let linkTarget = $(eventTarget.hash);
+        linkTarget = linkTarget.length ? linkTarget : $('[name=' + linkTarget.slice(1) + ']');
+        if (linkTarget.length) {
+            $('html, body').animate({
+                scrollTop: (linkTarget.offset().top)
+            }, 1000, "easeInOutExpo");
+        }
+    }
+}
 
 const collapseMobileNavbar = event => {
     const navbarCollapse = $(".navbar-collapse");
