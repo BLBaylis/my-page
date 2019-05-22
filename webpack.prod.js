@@ -5,6 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin'); //installed via npm
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const webpack = require("webpack");
 
 const buildPath = path.resolve(__dirname, 'dist');
 
@@ -127,6 +128,11 @@ module.exports = {
                 yandex: false,
                 windows: false
             }
+        }),
+        new webpack.ProvidePlugin({
+            "$":"jquery",
+            "jQuery":"jquery",
+            "window.jQuery":"jquery"
         }),
         new MiniCssExtractPlugin({
             filename: 'styles.[contenthash].css'
