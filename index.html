@@ -116,14 +116,14 @@
       <h2>Portfolio</h2>
       <div class = "container">
 
-      <!--  BRADLEYBAYLIS.ME -->
+      <!--  WORKINDTRAINING -->
 
         <!--  THUMBNAIL DESKTOP -->
 
-        <button type="button" data-toggle="modal" data-target="#bradModal" class = "p-0 mt-3 mb-5 mx-auto project-entry overflow-hidden position-relative" tabIndex = "0">
-            <img class = "img-fluid project-entry__img" src= "<%= require('./src/assets/images/screenshot-bradleybaylis.png') %>">
+        <button type="button" data-toggle="modal" data-target="#workindModal" class = "p-0 mt-3 mb-5 mx-auto project-entry overflow-hidden position-relative" tabIndex = "0">
+            <img class = "img-fluid project-entry__img" src= "<%= require('./src/assets/images/screenshot-workindtraining.png') %>">
             <div class = "project-entry__img-overlay d-flex flex-column justify-content-between position-absolute w-100 h-100">
-              <h4 class = "text-white position-relative my-2 project-entry__title">Bradleybaylis.me</h4>
+              <h4 class = "text-white position-relative my-2 project-entry__title">Workind Training</h4>
               <div class = "project-entry__logo-div h-25 d-flex justify-content-center align-items-center">
                 <img class="project-entry__logo h-100 mx-3" src="<%= require('./src/assets/bootstrap-logo.svg') %>">
                 <img class="project-entry__logo h-100 mx-3" src="<%= require('./src/assets/node-logo.svg') %>">
@@ -135,9 +135,9 @@
 
           <!-- THUMBNAIL MOBILE -->
 
-        <button type="button" data-toggle="modal" data-target="#bradModal" class = "mt-3 mb-3 mb-sm-5 project-entry--responsive p-0 card" tabIndex = "0">
-          <div class = "card-header w-100">Bradleybaylis.me</div>
-          <img class = "card-img-top mt-3 mx-auto project-entry__img--responsive" src= "<%= require('./src/assets/images/screenshot-bradleybaylis.png') %>">
+        <button type="button" data-toggle="modal" data-target="#workindModal" class = "mt-3 mb-3 mb-sm-5 project-entry--responsive p-0 card" tabIndex = "0">
+          <div class = "card-header w-100">Workind Training</div>
+          <img class = "card-img-top mt-3 mx-auto project-entry__img--responsive" src= "<%= require('./src/assets/images/screenshot-workindtraining.png') %>">
           <div class = "card-body">
             <div class = "h-100 d-flex justify-content-around align-items-center justify-content-sm-center">
               <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/bootstrap-logo.svg') %>">
@@ -150,35 +150,33 @@
 
           <!--  MODAL -->
 
-          <div class="text-dark modal fade" id="bradModal" tabindex="-1" role="dialog" aria-labelledby="bradModal" aria-hidden="true">
+          <div class="text-dark modal fade" id="workindModal" tabindex="-1" role="dialog" aria-labelledby="workindModal" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="bradModalLabel">Bradleybaylis.me</h5>
+                  <h5 class="modal-title" id="workindModalLabel">Workind Training</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body text-left">
                   <video class = "pa-1 rounded modal-video" width="100%" height="auto" autoplay = "autoplay" loop muted>
-                    <source src="<%= require('./src/assets/videos/video-bradleybaylis-demo.mp4') %>" type="video/mp4">
-                    <source src="<%= require('./src/assets/videos/video-bradleybaylis-demo.mp4') %>" type="video/webm">
+                      <source src="<%= require('./src/assets/videos/video-workindtraining-demo.webm') %>" type="video/webm">
+                    <source src="<%= require('./src/assets/videos/video-workindtraining-demo.mp4') %>" type="video/mp4">
                     Your browser does not support the video tag.
                   </video>
-                  <p>Bradleybaylis.me is my personal site hosted on a Digital Ocean VPS running Ubuntu and Node.js.  The main page utilises Bootstrap 4.
+                  <p>Workind Training provides courses that teach mental health first aid to employers.  Workindtraining.com is 
+                    their web presence, which provides information about the business and its services and provides means to get in touch with them,
                     <ul>
                       <li>Fully Responsive Design</li>
-                      <li>Hosts my other projects on the same domain</li>
-                      <li>Uses Nodemailer to enable you to send me emails for the page</li>
-                      <li>Provides and Node/Express API to give my tic-tac-toe project more functionality and enables the aforementioned contact form</li>
+                      <li>Scores 96/100 on Google's PageSpeed Insights with compressed, responsive images and gzip delivering fast load times and cahcing speeding up subsequent visits</li>
+                      <li>Uses Nodemailer to enable provide a means of contact if the user doesn't have common social media to get in touch with</li>
                     </ul>
                   </p>
                 </div>
-                <div class="modal-footer brad-modal-grid">
-                  <button type="button" class="btn btn-secondary brad-modal-grid-item" data-dismiss="modal">Close</button>
-                  <a href = "https://github.com/BLBaylis/my-page" role="button" class="btn btn-secondary brad-modal-grid-item">View Front End Repo</a>
-                  <a href = "https://github.com/BLBaylis/bradnet" role="button" class="btn btn-secondary brad-modal-grid-item">View API Repo</a>
-                  <a href = "#" class="btn btn-primary brad-modal-grid-item">Live Demo</a>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <a href = "https://www.workindtraining.com" class="btn btn-primary">Live Demo</a>
                 </div>
               </div>
             </div>
@@ -229,8 +227,8 @@
               </div>
               <div class="modal-body text-left">
                 <video class = "pa-1 rounded modal-video" width="100%" height="auto" autoplay = "autoplay" loop muted>
+                  <source src="<%= require('./src/assets/videos/video-tictactoe-demo.webm') %>" type="video/webm">
                   <source src="<%= require('./src/assets/videos/video-tictactoe-demo.mp4') %>" type="video/mp4">
-                  <source src="<%= require('./src/assets/videos/video-tictactoe-demo.mp4') %>" type="video/webm">
                   Your browser does not support the video tag.
                 </video>
                 <p>A tictactoe game made with React and Material-UI, it boasts the following features:
@@ -297,8 +295,8 @@
               </div>
               <div class="modal-body text-left">
                 <video class = "pa-1 rounded modal-video" width="100%" height="auto" autoplay = "autoplay" loop muted>
+                  <source src="<%= require('./src/assets/videos/video-facebrain-demo.webm') %>" type="video/webm">
                   <source src="<%= require('./src/assets/videos/video-facebrain-demo.mp4') %>" type="video/mp4">
-                  <source src="<%= require('./src/assets/videos/video-facebrain-demo.mp4') %>" type="video/webm">
                   Your browser does not support the video tag.
                 </video>
                 <p>This tool uses Clarifai's face recognition API to find faces in submitted URLS.  Features include:
