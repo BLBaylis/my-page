@@ -50,7 +50,17 @@
 
   <!-- HOME -->
 
-  <section class="container-fluid text-center d-flex flex-column bg-primary mx-auto h-100 home" id = "home">
+  <section class = "home">
+    <div class = "home-video-wrapper">
+      <div class = "home-video-wrapper-inner">
+        <video class = "home-video" autoplay muted>
+          <source src = "<%= require('./src/assets/videos/portfolio-video-lg.mp4') %>">
+        </video>
+      </div>
+    </div>   
+  </section>
+
+  <!--<section class="container-fluid text-center d-flex flex-column bg-primary mx-auto h-100 home" id = "home">
     <div class = "position-relative mx-auto avatar">
       <img
         src="<%= require('./src/assets/images/avatar-pic.jpg') %>"
@@ -65,7 +75,7 @@
     <a class = "scroll-link" href = "#about-target">
       <img class = "mx-auto" src="<%= require('./src/assets/chevron.svg') %>">
     </a>
-  </section>
+  </section>-->
 
   <main role="main" class="container-fluid px-0 text-center" id = "main">
 
