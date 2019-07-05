@@ -9,8 +9,13 @@ import "bootstrap/js/dist/modal";
 import "bootstrap/js/dist/alert";
 
 $(() => {
+    const homeVideo = $(".home-video");
     const contactForm = $(".contact-form");
     positionHomeVideo("DOMContentLoaded");
+    homeVideo.on("play", () => {
+        $(".navbar").removeClass("navbar--initial");
+        $(".side-bar").removeClass("side-bar--initial");
+    });
     $.easing.easeInOutExpo = function(x, t, b, c, d) {
         if (t == 0) return b;
         if (t == d) return b + c;

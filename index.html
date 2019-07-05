@@ -22,7 +22,7 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-sm bg-secondary w-100 position-fixed p-0">
+  <nav class="navbar navbar-expand-sm bg-secondary w-100 position-fixed p-0 navbar--initial">
     <a class="navbar-brand scroll-link text-white py-0 px-2 d-flex align-items-center" href="#home">
       <img class = "navbar-logo" src = "<%= require('./src/assets/logo.svg') %>">
     </a>
@@ -50,38 +50,39 @@
 
   <!-- HOME -->
 
-  <section class = "home">
-    <div class = "home-video-wrapper">
-      <div class = "home-video-wrapper-inner">
-        <video class = "home-video" autoplay muted>
-          <source src = "<%= require('./src/assets/videos/portfolio-video-lg.mp4') %>">
-        </video>
+  <section class = "home" id = "home">
+    <div class = "home-inner">
+      <div class = "home-video-wrapper">
+        <div class = "home-video-wrapper-inner">
+          <video class = "home-video" autoplay muted>
+            <source src = "<%= require('./src/assets/videos/portfolio-video-lg.mp4') %>">
+          </video>
+        </div>
+      </div>   
+      <div class = "side-bar side-bar--initial d-flex flex-column align-items-center text-center">
+        <div class = "position-relative mx-auto avatar">
+          <img
+            src="<%= require('./src/assets/images/avatar-pic.jpg') %>"
+            class="d-block position-relative h-100 mx-auto rounded-circle avatar__img"
+          >
+        </div>
+        <h1 class = "text-white my-0">
+          <span class = "display-3">Bradley Baylis</span>
+          <hr/>
+          <span class = "display-4">Full Stack Developer</span>
+        </h1>
+        <a class = "scroll-link" href = "#about">
+          <img class = "mx-auto" src="<%= require('./src/assets/chevron.svg') %>">
+        </a>
       </div>
-    </div>   
+    </div>
   </section>
 
-  <!--<section class="container-fluid text-center d-flex flex-column bg-primary mx-auto h-100 home" id = "home">
-    <div class = "position-relative mx-auto avatar">
-      <img
-        src="<%= require('./src/assets/images/avatar-pic.jpg') %>"
-        class="d-block position-relative h-100 mx-auto rounded-circle avatar__img"
-      >
-    </div>
-    <h1 class = "text-white mx-auto my-0">
-        <span class = "display-3">Bradley Baylis</span>
-        <hr/>
-        <span class = "display-4">Full Stack Developer</span>
-    </h1>
-    <a class = "scroll-link" href = "#about-target">
-      <img class = "mx-auto" src="<%= require('./src/assets/chevron.svg') %>">
-    </a>
-  </section>-->
-
-  <main role="main" class="container-fluid px-0 text-center" id = "main">
+  <main role="main" class="container-fluid px-0 text-center bg-primary" id = "main">
 
     <!--  ABOUT -->
-    <div class = "nav-link-target about" id = "about-target"></div>
-    <section class="container-fluid py-4 text-left about" id = "about">
+    <div class = "nav-link-target" id = "about"></div>
+    <section class="container-fluid py-5 text-left about bg-primary text-white">
       <div class = "container" style = "max-width:630px">
         <h2 class = "text-center mb-3">About Me</h2>
         <p class = "px-2">Hi! My name is Brad and I'm primarily a front end
@@ -116,13 +117,13 @@
             <span>🧘</span>
           </li>
         </ul>
-        <a style = "background:#7b2d26" rel = "noopener noreferrer" class = "btn btn-block text-white mt-5" href = "<%= require('./src/assets/Bradley-Baylis-CV.pdf') %>" target = "_blank">My CV</a>
+        <a rel = "noopener noreferrer" class = "btn btn-block btn-secondary text-white mt-md-5" href = "<%= require('./src/assets/Bradley-Baylis-CV.pdf') %>" target = "_blank">My CV</a>
       </div>
     </section>
-
+    <hr class="divider"/>
     <!--  PORTFOLIO -->
     <div class = "nav-link-target" id = "portfolio-target"></div>
-    <section class = "py-4 container-fluid text-white px-0 bg-secondary" id = "portfolio">
+    <section class = "py-5 container-fluid text-white px-0 bg-primary" id = "portfolio">
       <h2>Portfolio</h2>
       <div class = "container">
 
@@ -329,10 +330,11 @@
 
       </div>
     </section>
+    <hr class="divider"/>
 
     <!--  CONTACT -->
     <div class = "nav-link-target" id = "contact-target"></div>
-    <section class = "container-fluid py-4 contact bg-primary" id = "contact">
+    <section class = "container-fluid py-5 contact bg-primary" id = "contact">
       <div class = "container">
         <h2 class = "text-white">Get in touch</h2>
         <a class = "btn social-media-link m-3" href = "https://github.com/BLBaylis">

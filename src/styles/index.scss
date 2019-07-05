@@ -1,8 +1,10 @@
-$primary: #7b2d26;
-$secondary: #bc2ad3; // #383838;
+$primary: #171a2c;
+$secondary: #bc2ad3;
+$accent: #5bffdb;
 $navbar-height: 56px;
 $alert-size-xs: 74px;
 $alert-size-sm: 50px;
+$video-play-time: 5000ms;
 
 @import "~bootstrap/scss/bootstrap";
 @import "./keyframes";
@@ -15,7 +17,13 @@ body {
 /* NAVBAR */
 
 .navbar {
+    top: 0;
     z-index: 3;
+    transition: top 400ms ease $video-play-time;
+}
+
+.navbar--initial {
+    top: -56px;
 }
 
 .navbar-brand {
@@ -52,18 +60,24 @@ body {
 }
 
 /* HOME */
+
 .home {
-    position: relative;
     height: 100%;
 }
 
-.home-video-wrapper {
+.home-inner {
     position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+
+.home-video-wrapper {
+    position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
     overflow: hidden;
+    width: 100%;
     height: 100%;
     z-index: -100;
     background: rgba(17, 18, 33, 1);
@@ -82,36 +96,55 @@ body {
     width: 100%;
     top: 0;
     left: 0;
-    background: rgb(255, 255, 255);
-    background: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0) 50%,
-        rgba(17, 18, 33, 1) 90%
-    );
-    transition: width 100ms linear;
+    transition: right 100ms linear;
 }
 
 .home-video {
     height: 100%;
 }
 
-@media (min-aspect-ratio: 880/500) {
-    .side-bit {
-        width: 100%;
-    }
+.side-bar {
+    position: absolute;
+    min-height: 424px;
+    height: 100%;
+    justify-content: space-evenly;
+    padding-top: $navbar-height;
+    width: 100%;
+    right: 0;
+    background: rgba(21, 21, 42, 0.9);
+    transition: right 400ms ease $video-play-time + 400;
 }
 
-/*.home {
-    min-height: 424px;
-    padding-top: $navbar-height;
-    justify-content: space-evenly;
-}*/
+.side-bar--initial {
+    right: -100%;
+}
+
+@media (min-aspect-ratio: 850/500) {
+    .side-bar {
+        min-width: 300px;
+        width: 39%;
+        background: rgba(21, 21, 42, 0.9);
+    }
+
+    .side-bar--initial {
+        right: -39%;
+    }
+
+    .home-video-wrapper-inner::before {
+        background: rgb(255, 255, 255);
+        background: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0) 90%,
+            rgba(17, 18, 33, 1) 100%
+        );
+    }
+}
 
 .avatar {
     height: 66vw;
     width: 66vw;
-    max-height: 300px;
-    max-width: 300px;
+    max-height: 200px;
+    max-width: 200px;
 }
 
 .avatar::before {
@@ -160,11 +193,87 @@ hr {
     pointer-events: none;
 }
 
-/* ABOUT */
+@media (min-height: 520px) {
+    .side-bar {
+        justify-content: center;
+    }
 
-.about {
-    color: #383838;
-    background: #f7f9fb;
+    h1 {
+        position: relative;
+        top: -25px;
+    }
+
+    .scroll-link {
+        position: absolute;
+        bottom: 10%;
+    }
+
+    .avatar {
+        top: -25px;
+        margin-bottom: 1rem;
+    }
+}
+
+main {
+    position: relative;
+    z-index: 2;
+}
+
+.divider {
+    border: none;
+    width: 100%;
+    height: 1.5px;
+    display: block;
+    position: relative;
+    margin: 0;
+}
+
+.divider::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1.5px;
+    left: 0;
+    transition: opacity 0.3s ease, animation 0.3s ease;
+    background: rgb(91, 255, 219);
+    background: linear-gradient(
+        90deg,
+        $accent 0%,
+        $secondary 25%,
+        $accent 50%,
+        $secondary 75%,
+        $accent 100%
+    );
+    background-size: 200%;
+    background-position: 0%;
+    animation: divider 2.5s linear infinite;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1.5px;
+    left: 0;
+    background: linear-gradient(
+        90deg,
+        $primary 0%,
+        $primary 50%,
+        transparent 50%,
+        transparent 100%
+    );
+    background-size: 14px;
+    background-position: center;
+    z-index: 1;
+}
+
+@keyframes divider {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 200%;
+    }
 }
 
 /* PORTFOLIO */
@@ -172,7 +281,7 @@ hr {
 .project-entry__img--responsive {
     max-width: 400px;
     width: 90%;
-    border: 1px solid rgba(0, 0, 0, 0.125);
+    border: 7px solid rgba(0, 0, 0, 0.125);
 }
 
 .project-entry__logo--responsive {
@@ -187,7 +296,7 @@ hr {
 
 .project-entry:hover,
 .project-entry:focus {
-    border: solid 2px #ffc107;
+    border: solid 2px $accent;
 }
 
 .project-entry__img-overlay {
@@ -330,7 +439,8 @@ hr {
 footer {
     top: calc(-#{$alert-size-xs} - 1rem);
     height: calc(#{$alert-size-xs} + 1rem);
-    background: #383838;
+    background: $secondary;
+    z-index: 2;
 }
 
 @media (max-width: 542px) {
