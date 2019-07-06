@@ -33,16 +33,16 @@
     <div class="collapse navbar-collapse" id="navbarDropdowns">
       <ul class="navbar-nav ml-auto mr-2">
         <li class="nav-item">
-          <a class="nav-link text-white px-2 py-0" href="#home">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link px-2 py-0" href="#home">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white px-2 py-0" href="#about-target">About</a>
+          <a class="nav-link px-2 py-0" href="#about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white px-2 py-0" href="#portfolio-target">Portfolio</a>
+          <a class="nav-link px-2 py-0" href="#portfolio">Portfolio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white px-2 py-0" href="#contact-target">Contact</a>
+          <a class="nav-link px-2 py-0" href="#contact">Contact</a>
         </li>
       </ul>
     </div>
@@ -71,7 +71,7 @@
           <hr/>
           <span class = "display-4">Full Stack Developer</span>
         </h1>
-        <a class = "scroll-link" href = "#about">
+        <a class = "scroll-link chevron" href = "#about">
           <img class = "mx-auto" src="<%= require('./src/assets/chevron.svg') %>">
         </a>
       </div>
@@ -82,8 +82,7 @@
 
     <!--  ABOUT -->
     <div class = "nav-link-target" id = "about"></div>
-    <section class="container-fluid py-5 text-left about bg-primary text-white">
-      <div class = "container" style = "max-width:630px">
+    <section class="container py-5 text-left about bg-primary text-white">
         <h2 class = "text-center mb-3">About Me</h2>
         <p class = "px-2">Hi! My name is Brad and I'm primarily a front end
           developer based near London, though I have an interest in full stack
@@ -118,20 +117,19 @@
           </li>
         </ul>
         <a rel = "noopener noreferrer" class = "btn btn-block btn-secondary text-white mt-md-5" href = "<%= require('./src/assets/Bradley-Baylis-CV.pdf') %>" target = "_blank">My CV</a>
-      </div>
     </section>
     <hr class="divider"/>
     <!--  PORTFOLIO -->
-    <div class = "nav-link-target" id = "portfolio-target"></div>
+    <div class = "nav-link-target" id = "portfolio"></div>
     <section class = "py-5 container-fluid text-white px-0 bg-primary" id = "portfolio">
       <h2>Portfolio</h2>
-      <div class = "container">
 
+      <div class = "d-flex mt-4 mx-lg-auto align-items-center justify-content-lg-center flex-lg-row flex-column">
       <!--  WORKINDTRAINING -->
 
         <!--  THUMBNAIL DESKTOP -->
 
-        <button type="button" data-toggle="modal" data-target="#workindModal" class = "p-0 mt-3 mb-5 mx-auto project-entry overflow-hidden position-relative" tabIndex = "0">
+        <button type="button" data-toggle="modal" data-target="#workindModal" class = "workind p-0 project-entry overflow-hidden position-relative" tabIndex = "0">
             <img class = "img-fluid project-entry__img" src= "<%= require('./src/assets/images/screenshot-workindtraining.png') %>">
             <div class = "project-entry__img-overlay d-flex flex-column justify-content-between position-absolute w-100 h-100">
               <h4 class = "text-white position-relative my-2 project-entry__title">Workind Training</h4>
@@ -144,60 +142,26 @@
             </div>
           </button>
 
-          <!-- THUMBNAIL MOBILE -->
+        <!-- THUMBNAIL MOBILE -->
 
-        <button type="button" data-toggle="modal" data-target="#workindModal" class = "mt-3 mb-3 mb-sm-5 project-entry--responsive p-0 card" tabIndex = "0">
+        <button type="button" data-toggle="modal" data-target="#workindModal" class = "workind project-entry--responsive p-0 card" tabIndex = "0">
           <div class = "card-header w-100">Workind Training</div>
           <img class = "card-img-top mt-3 mx-auto project-entry__img--responsive" src= "<%= require('./src/assets/images/screenshot-workindtraining.png') %>">
           <div class = "card-body">
-            <div class = "h-100 d-flex justify-content-around align-items-center justify-content-sm-center">
-              <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/bootstrap-logo.svg') %>">
-              <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/node-card-logo.svg') %>">
-              <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/nginx-logo.svg') %>">
+            <div class = "logo-container h-100 d-flex align-items-center">
+              <img class="project-entry__logo--responsive mx-3" src="<%= require('./src/assets/bootstrap-logo.svg') %>">
+              <img class="project-entry__logo--responsive mx-3" src="<%= require('./src/assets/node-card-logo.svg') %>">
+              <img class="project-entry__logo--responsive mx-3" src="<%= require('./src/assets/nginx-logo.svg') %>">
             </div>
           </div>
           <div class = "card-footer w-100 text-muted">Front End and Deployment</div>
         </button>
 
-          <!--  MODAL -->
-
-          <div class="text-dark modal fade" id="workindModal" tabindex="-1" role="dialog" aria-labelledby="workindModal" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="workindModalLabel">Workind Training</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body text-left">
-                  <video class = "pa-1 rounded modal-video" width="100%" height="auto" autoplay = "autoplay" loop muted>
-                      <source src="<%= require('./src/assets/videos/video-workindtraining-demo.webm') %>" type="video/webm">
-                    <source src="<%= require('./src/assets/videos/video-workindtraining-demo.mp4') %>" type="video/mp4">
-                    Your browser does not support the video tag.
-                  </video>
-                  <p>Workind Training provides courses that teach mental health first aid to employers.  Workindtraining.com is 
-                    their web presence, which provides information about the business and its services and provides means to get in touch with them,
-                    <ul>
-                      <li>Fully Responsive Design</li>
-                      <li>Scores 96/100 on Google's PageSpeed Insights with compressed, responsive images and gzip delivering fast load times and cahcing speeding up subsequent visits</li>
-                      <li>Uses Nodemailer to enable provide a means of contact if the user doesn't have common social media to get in touch with</li>
-                    </ul>
-                  </p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <a href = "https://www.workindtraining.com" class="btn btn-primary">Live Demo</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
       <!--  TICTACTOE -->
 
         <!--  THUMBNAIL DESKTOP -->
 
-        <button type="button" data-toggle="modal" data-target="#tictactoeModal" class = "p-0 my-5 mx-auto project-entry overflow-hidden position-relative" tabIndex = "0">
+        <button type="button" data-toggle="modal" data-target="#tictactoeModal" class = "p-0 project-entry overflow-hidden position-relative" tabIndex = "0">
           <img class = "img-fluid project-entry__img" src= "<%= require('./src/assets/images/screenshot-tictactoe.png') %>">
           <div class = "project-entry__img-overlay d-flex flex-column justify-content-between position-absolute w-100 h-100">
             <h4 class = "text-white position-relative my-2 project-entry__title">Unbeatable Tic-tac-toe</h4>
@@ -212,59 +176,22 @@
 
         <!-- THUMBNAIL MOBILE -->
 
-        <button type="button" data-toggle="modal" data-target="#tictactoeModal" class = "my-4 my-sm-5 project-entry--responsive p-0 card" tabIndex = "0">
+        <button type="button" data-toggle="modal" data-target="#tictactoeModal" class = "project-entry--responsive p-0 card" tabIndex = "0">
           <div class = "card-header w-100">Unbeatable Tic-tac-toe</div>
           <img class = "card-img-top mt-3 mx-auto project-entry__img--responsive" src= "<%= require('./src/assets/images/screenshot-tictactoe.png') %>">
           <div class = "card-body">
-            <div class = "h-100 d-flex justify-content-around align-items-center justify-content-sm-center">
-              <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/javascript-logo.svg') %>">
-              <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/react-logo.svg') %>">
-              <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/redux-logo.svg') %>">
+            <div class = "logo-container h-100 d-flex align-items-center">
+              <img class="project-entry__logo--responsive mx-3" src="<%= require('./src/assets/javascript-logo.svg') %>">
+              <img class="project-entry__logo--responsive mx-3" src="<%= require('./src/assets/react-logo.svg') %>">
+              <img class="project-entry__logo--responsive mx-3" src="<%= require('./src/assets/redux-logo.svg') %>">
             </div>
           </div>
           <div class = "card-footer w-100 text-muted">Front End</div>
         </button>
 
-        <!--  MODAL -->
-
-        <div class="text-dark modal fade" id="tictactoeModal" tabindex="-1" role="dialog" aria-labelledby="tictactoeModal" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="tictactoeModalLabel">Unbeatable Tictactoe</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body text-left">
-                <video class = "pa-1 rounded modal-video" width="100%" height="auto" autoplay = "autoplay" loop muted>
-                  <source src="<%= require('./src/assets/videos/video-tictactoe-demo.webm') %>" type="video/webm">
-                  <source src="<%= require('./src/assets/videos/video-tictactoe-demo.mp4') %>" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-                <p>A tictactoe game made with React and Material-UI, it boasts the following features:
-                  <ul>
-                    <li>Fully Responsive Design</li>
-                    <li>Option to play on 3 x 3, 5 x 5 or 7 x 7 grids</li>
-                    <li>Play against an unbeatable computer or play against a friend locally</li>
-                    <li>Variety of icons with customisable colours</li>
-                  </ul>
-                </p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary  modal-btnh-100" data-dismiss="modal">Close</button>
-                <a href = "https://github.com/BLBaylis/tic-tac-toe" role="button" class="btn btn-secondary modal-btn">View Repo</a>
-                <a href = "/tictactoe" type="button" class="btn btn-primary modal-btn">Live Demo</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
       <!-- FACEBRAIN -->
 
-        <!-- THUMBNAIL DESKTOP -->
-
-        <button type="button" data-toggle="modal" data-target="#facebrainModal" class = "my-4 p-0 mx-auto project-entry overflow-hidden position-relative" tabIndex = "0">
+        <button type="button" data-toggle="modal" data-target="#facebrainModal" class = "facebrain p-0 project-entry overflow-hidden position-relative" tabIndex = "0">
           <img class = "img-fluid project-entry__img" src= "<%= require('./src/assets/images/screenshot-facebrain.png') %>">
           <div class = "project-entry__img-overlay d-flex flex-column justify-content-between position-absolute w-100 h-100">
             <h4 class = "text-white position-relative my-2 project-entry__title">FaceBrain</h4>
@@ -279,68 +206,32 @@
 
         <!-- THUMBNAIL MOBILE -->
 
-        <button type="button" data-toggle="modal" data-target="#facebrainModal" class = "my-4 my-sm-5 project-entry--responsive p-0 card" tabIndex = "0">
+        <button type="button" data-toggle="modal" data-target="#facebrainModal" class = "facebrain project-entry--responsive p-0 card" tabIndex = "0">
           <div class = "card-header w-100">FaceBrain</div>
           <img class = "card-img-top mt-3 mx-auto project-entry__img--responsive" src= "<%= require('./src/assets/images/screenshot-facebrain.png') %>">
           <div class = "card-body">
-            <div class = "h-100 d-flex justify-content-around align-items-center justify-content-sm-center">
-              <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/react-logo.svg') %>">
-              <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/node-card-logo.svg') %>">
-              <img class="project-entry__logo--responsive mx-2" src="<%= require('./src/assets/postgres-logo.svg') %>">
+            <div class = "logo-container h-100 d-flex align-items-center">
+              <img class="project-entry__logo--responsive mx-3" src="<%= require('./src/assets/react-logo.svg') %>">
+              <img class="project-entry__logo--responsive mx-3" src="<%= require('./src/assets/node-card-logo.svg') %>">
+              <img class="project-entry__logo--responsive mx-3" src="<%= require('./src/assets/postgres-logo.svg') %>">
             </div>
           </div>
           <div class = "card-footer w-100 text-muted">Full Stack</div>
         </button>
-
-
-        <!-- MODAL -->
-
-        <div class="text-dark modal fade" id="facebrainModal" tabindex="-1" role="dialog" aria-labelledby="facebrainModal" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="facebrainModalLabel">FaceBrain</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body text-left">
-                <video class = "pa-1 rounded modal-video" width="100%" height="auto" autoplay = "autoplay" loop muted>
-                  <source src="<%= require('./src/assets/videos/video-facebrain-demo.webm') %>" type="video/webm">
-                  <source src="<%= require('./src/assets/videos/video-facebrain-demo.mp4') %>" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-                <p>This tool uses Clarifai's face recognition API to find faces in submitted URLS.  Features include:
-                  <ul>
-                    <li>Fully Responsive Design</li>
-                    <li>A PostgreSQL database to store login details and usage statistics</li>
-                    <li>A Node/Express API for retreiving user profiles from the database and accessing Clarifai's API</li>
-                    <li>Password hashing and authentication with Bcrypt.js</li>
-                  </ul>
-                </p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary  modal-btnh-100" data-dismiss="modal">Close</button>
-                <a href = "https://github.com/BLBaylis/facebrain" role="button" class="btn btn-secondary modal-btn">View Repo</a>
-                <a href = "/facebrain" type="button" class="btn btn-primary modal-btn">Live Demo</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
+
     </section>
     <hr class="divider"/>
 
     <!--  CONTACT -->
-    <div class = "nav-link-target" id = "contact-target"></div>
+    <div class = "nav-link-target" id = "contact"></div>
     <section class = "container-fluid py-5 contact bg-primary" id = "contact">
       <div class = "container">
         <h2 class = "text-white">Get in touch</h2>
-        <a class = "btn social-media-link m-3" href = "https://github.com/BLBaylis">
+        <a class = "btn social-media-link m-3 bg-secondary" href = "https://github.com/BLBaylis">
           <img class="social-media-logo" src="<%= require('./src/assets/linkedin-logo.svg') %>">
         </a>
-        <a class = "btn social-media-link m-3" href = "https://www.linkedin.com/in/bradley-baylis/">
+        <a class = "btn social-media-link m-3 bg-secondary" href = "https://www.linkedin.com/in/bradley-baylis/">
           <img class="social-media-logo" src="<%= require('./src/assets/github-logo.svg') %>">
         </a>
         <h4 class = "text-white">...or you can send me an email below!</h4>
@@ -373,8 +264,114 @@
           </button>
         </form>
       </div>
+      </div>
     </section>
   </main>
+
+  <!--  WORKINDTRAINING MODAL -->
+
+  <div class="text-dark modal fade" id="workindModal" tabindex="-1" role="dialog" aria-labelledby="workindModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="workindModalLabel">Workind Training</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-left">
+          <video class = "pa-1 rounded modal-video" width="100%" height="auto" autoplay = "autoplay" loop muted>
+              <source src="<%= require('./src/assets/videos/video-workindtraining-demo.webm') %>" type="video/webm">
+            <source src="<%= require('./src/assets/videos/video-workindtraining-demo.mp4') %>" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p>Workind Training provides courses that teach mental health first aid to employers.  Workindtraining.com is 
+            their web presence, which provides information about the business and its services and provides means to get in touch with them,
+            <ul>
+              <li>Fully Responsive Design</li>
+              <li>Scores 96/100 on Google's PageSpeed Insights with compressed, responsive images and gzip delivering fast load times and cahcing speeding up subsequent visits</li>
+              <li>Uses Nodemailer to enable provide a means of contact if the user doesn't have common social media to get in touch with</li>
+            </ul>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <a href = "https://www.workindtraining.com" class="btn btn-primary">Live Demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- TICTACTOE MODAL -->
+
+  <div class="text-dark modal fade" id="tictactoeModal" tabindex="-1" role="dialog" aria-labelledby="tictactoeModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="tictactoeModalLabel">Unbeatable Tictactoe</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-left">
+          <video class = "pa-1 rounded modal-video" width="100%" height="auto" autoplay = "autoplay" loop muted>
+            <source src="<%= require('./src/assets/videos/video-tictactoe-demo.webm') %>" type="video/webm">
+            <source src="<%= require('./src/assets/videos/video-tictactoe-demo.mp4') %>" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p>A tictactoe game made with React and Material-UI, it boasts the following features:
+            <ul>
+              <li>Fully Responsive Design</li>
+              <li>Option to play on 3 x 3, 5 x 5 or 7 x 7 grids</li>
+              <li>Play against an unbeatable computer or play against a friend locally</li>
+              <li>Variety of icons with customisable colours</li>
+            </ul>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary  modal-btnh-100" data-dismiss="modal">Close</button>
+          <a href = "https://github.com/BLBaylis/tic-tac-toe" role="button" class="btn btn-secondary modal-btn">View Repo</a>
+          <a href = "/tictactoe" type="button" class="btn btn-primary modal-btn">Live Demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FACEBRAIN MODAL -->
+
+  <div class="text-dark modal fade" id="facebrainModal" tabindex="-1" role="dialog" aria-labelledby="facebrainModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="facebrainModalLabel">FaceBrain</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body text-left">
+          <video class = "pa-1 rounded modal-video" width="100%" height="auto" autoplay = "autoplay" loop muted>
+            <source src="<%= require('./src/assets/videos/video-facebrain-demo.webm') %>" type="video/webm">
+            <source src="<%= require('./src/assets/videos/video-facebrain-demo.mp4') %>" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p>This tool uses Clarifai's face recognition API to find faces in submitted URLS.  Features include:
+            <ul>
+              <li>Fully Responsive Design</li>
+              <li>A PostgreSQL database to store login details and usage statistics</li>
+              <li>A Node/Express API for retreiving user profiles from the database and accessing Clarifai's API</li>
+              <li>Password hashing and authentication with Bcrypt.js</li>
+            </ul>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary  modal-btnh-100" data-dismiss="modal">Close</button>
+          <a href = "https://github.com/BLBaylis/facebrain" role="button" class="btn btn-secondary modal-btn">View Repo</a>
+          <a href = "/facebrain" type="button" class="btn btn-primary modal-btn">Live Demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
   <footer class = "position-relative text-white px-4 d-flex justify-content-center align-items-center">Website created by © Bradley Baylis 2019</footer>
 </body>
 </html>

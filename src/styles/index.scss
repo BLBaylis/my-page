@@ -30,6 +30,10 @@ body {
     height: $navbar-height;
 }
 
+.navbar-brand:hover {
+    background: $accent;
+}
+
 .navbar-logo {
     height: 40px;
     width: auto;
@@ -48,10 +52,20 @@ body {
     line-height: $navbar-height;
 }
 
-.nav-link:hover,
-.navbar-toggler:hover,
-.navbar-brand:hover {
-    background: #474646;
+.nav-link {
+    color: white;
+}
+
+.nav-link:hover {
+    color: $accent;
+}
+
+.navbar-toggler:hover {
+    border-color: $accent;
+}
+
+.navbar-toggler:hover .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%235bffdb' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 .nav-link-target {
@@ -203,7 +217,7 @@ hr {
         top: -25px;
     }
 
-    .scroll-link {
+    .scroll-link.chevron {
         position: absolute;
         bottom: 10%;
     }
@@ -279,7 +293,6 @@ main {
 /* PORTFOLIO */
 
 .project-entry__img--responsive {
-    max-width: 400px;
     width: 90%;
     border: 7px solid rgba(0, 0, 0, 0.125);
 }
@@ -288,10 +301,53 @@ main {
     width: 20%;
 }
 
+.card-body {
+    width: 90%;
+    padding: 1.25rem 0;
+    margin: 0 auto;
+}
+
+.logo-container {
+    justify-content: center;
+}
+
 .project-entry {
     display: none;
-    width: 100%;
-    max-width: 600px;
+}
+
+.project-entry,
+.project-entry--responsive {
+    flex: 1 1 auto;
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 650px;
+}
+
+@media (min-width: 576px) {
+    .project-entry__logo--responsive {
+        height: 50px;
+        max-width: 65px;
+    }
+
+    .project-entry,
+    .project-entry--responsive {
+        width: 70%;
+    }
+}
+
+@media (min-width: 992px) {
+    .project-entry,
+    .project-entry--responsive {
+        margin: 0 20px;
+    }
+
+    .workind {
+        margin-left: 40px;
+    }
+
+    .facebrain {
+        margin-right: 40px;
+    }
 }
 
 .project-entry:hover,
@@ -483,12 +539,6 @@ footer {
 
     .initial-animation-footer {
         animation: slingshot-sm-footer 0.5s;
-    }
-}
-
-@media (min-width: 576px) {
-    .project-entry__logo--responsive {
-        width: 10%;
     }
 }
 
