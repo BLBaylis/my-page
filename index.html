@@ -24,7 +24,7 @@
 
   <nav class="navbar navbar-expand-sm bg-secondary w-100 position-fixed p-0 navbar--initial">
     <a class="navbar-brand scroll-link text-white py-0 px-2 d-flex align-items-center" href="#home">
-      <img class = "navbar-logo" src = "<%= require('./src/assets/logo.svg') %>">
+      <img class = "navbar-logo" alt = "bradley baylis logo" src = "<%= require('./src/assets/images/logos/logo.svg') %>">
     </a>
     <button class="navbar-toggler navbar__toggler m-2" type="button" data-toggle="collapse" data-target="#navbarDropdowns" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -62,8 +62,9 @@
       <div class = "side-bar side-bar--initial d-flex flex-column align-items-center text-center">
         <div class = "position-relative mx-auto avatar">
           <img
-            src="<%= require('./src/assets/images/avatar-pic.jpg') %>"
+            src="<%= require('./src/assets/images/avatar-pic-300.jpg') %>"
             class="d-block position-relative h-100 mx-auto rounded-circle avatar__img"
+            alt = "bradley baylis"
           >
         </div>
         <h1 class = "text-white my-0">
@@ -71,8 +72,8 @@
           <hr/>
           <span class = "display-4">Full Stack Developer</span>
         </h1>
-        <a class = "scroll-link chevron" href = "#about">
-          <img class = "mx-auto" src="<%= require('./src/assets/chevron.svg') %>">
+        <a class = "scroll-link chevron" href = "#about" alt = "scroll to content">
+          <img class = "mx-auto" alt = "downwards pointing arrow" src="<%= require('./src/assets/images/logos/chevron.svg') %>">
         </a>
       </div>
     </div>
@@ -121,7 +122,7 @@
     <hr class="divider"/>
     <!--  PORTFOLIO -->
     <div class = "nav-link-target" id = "portfolio"></div>
-    <section class = "py-5 container-fluid text-white px-0 bg-primary" id = "portfolio">
+    <section class = "py-5 container-fluid text-white px-0 bg-primary">
       <h2>Portfolio</h2>
 
       <div class = "d-flex mt-4 mx-lg-auto align-items-center justify-content-lg-center flex-lg-row flex-column">
@@ -130,13 +131,35 @@
         <!--  THUMBNAIL DESKTOP -->
 
         <button type="button" data-toggle="modal" data-target="#workindModal" class = "workind p-0 project-entry overflow-hidden position-relative" tabIndex = "0">
-            <img class = "img-fluid project-entry__img" src= "<%= require('./src/assets/images/screenshot-workindtraining.png') %>">
+            <picture>
+                <source
+                  srcset="<%= require('./src/assets/images/screenshot-workindtraining-640.webp') %> 640w,
+                  <%= require('./src/assets/images/screenshot-workindtraining-768.webp') %> 768w,
+                  <%= require('./src/assets/images/screenshot-workindtraining-1024.webp') %> 1024w,
+                  <%= require('./src/assets/images/screenshot-workindtraining-1366.webp') %> 1366w,
+                  <%= require('./src/assets/images/screenshot-workindtraining-1600.webp') %> 1600w,
+                  <%= require('./src/assets/images/screenshot-workindtraining-1706.webp') %> 1707w"
+                  sizes="100%"
+                  type = "image/webp"
+                />
+                <source
+                  srcset="<%= require('./src/assets/images/screenshot-workindtraining-640.png') %> 640w,
+                  <%= require('./src/assets/images/screenshot-workindtraining-768.png') %> 768w,
+                  <%= require('./src/assets/images/screenshot-workindtraining-1024.png') %> 1024w,
+                  <%= require('./src/assets/images/screenshot-workindtraining-1366.png') %> 1366w,
+                  <%= require('./src/assets/images/screenshot-workindtraining-1600.png') %> 1600w,
+                  <%= require('./src/assets/images/screenshot-workindtraining-1706.png') %> 1707w"
+                  sizes="100%"
+                  type = "image/png"
+                />
+              <img class = "img-fluid project-entry__img" alt = "workindtraining screenshot" src= "<%= require('./src/assets/images/screenshot-workindtraining-1706.png') %>">
+            </picture>
             <div class = "project-entry__img-overlay d-flex flex-column justify-content-between position-absolute w-100 h-100">
               <h4 class = "text-white position-relative my-2 project-entry__title">Workind Training</h4>
               <div class = "project-entry__logo-div h-25 d-flex justify-content-center align-items-center">
-                <img class="project-entry__logo h-100 mx-3" src="<%= require('./src/assets/bootstrap-logo.svg') %>">
-                <img class="project-entry__logo h-100 mx-3" src="<%= require('./src/assets/node-logo.svg') %>">
-                <img class="project-entry__logo h-25 mx-3" src="<%= require('./src/assets/nginx-logo.svg') %>">
+                <img class="project-entry__logo h-100 mx-3" alt = "bootstrap logo" src="<%= require('./src/assets/images/logos/bootstrap-logo.svg') %>">
+                <img class="project-entry__logo h-100 mx-3" alt = "node logo" src="<%= require('./src/assets/images/logos/node-logo.svg') %>">
+                <img class="project-entry__logo h-25 mx-3" alt = "nginx logo" src="<%= require('./src/assets/images/logos/nginx-logo.svg') %>">
               </div>
               <p class = "text-white position-relative my-2 project-entry__bottom-text">Front End and Deployment</p>
             </div>
@@ -146,12 +169,34 @@
 
         <button type="button" data-toggle="modal" data-target="#workindModal" class = "workind project-entry--responsive p-0 card" tabIndex = "0">
           <div class = "card-header w-100">Workind Training</div>
-          <img class = "card-img-top mt-3 mx-auto project-entry__img--responsive" src= "<%= require('./src/assets/images/screenshot-workindtraining.png') %>">
+          <picture>
+              <source
+                srcset="<%= require('./src/assets/images/screenshot-workindtraining-640.webp') %> 640w,
+                <%= require('./src/assets/images/screenshot-workindtraining-768.webp') %> 768w,
+                <%= require('./src/assets/images/screenshot-workindtraining-1024.webp') %> 1024w,
+                <%= require('./src/assets/images/screenshot-workindtraining-1366.webp') %> 1366w,
+                <%= require('./src/assets/images/screenshot-workindtraining-1600.webp') %> 1600w,
+                <%= require('./src/assets/images/screenshot-workindtraining-1706.webp') %> 1707w"
+                sizes="90%"
+                type = "image/webp"
+              />
+              <source
+                srcset="<%= require('./src/assets/images/screenshot-workindtraining-640.png') %> 640w,
+                <%= require('./src/assets/images/screenshot-workindtraining-768.png') %> 768w,
+                <%= require('./src/assets/images/screenshot-workindtraining-1024.png') %> 1024w,
+                <%= require('./src/assets/images/screenshot-workindtraining-1366.png') %> 1366w,
+                <%= require('./src/assets/images/screenshot-workindtraining-1600.png') %> 1600w,
+                <%= require('./src/assets/images/screenshot-workindtraining-1706.png') %> 1707w"
+                sizes="90%"
+                type = "image/png"
+              />
+              <img class = "card-img-top mt-3 mx-auto project-entry__img--responsive" alt = "workindtraining screenshot" src= "<%= require('./src/assets/images/screenshot-workindtraining-1706.png') %>">
+            </picture>
           <div class = "card-body">
             <div class = "logo-container h-100 d-flex align-items-center">
-              <img class="project-entry__logo--responsive mx-3" src="<%= require('./src/assets/bootstrap-logo.svg') %>">
-              <img class="project-entry__logo--responsive mx-3" src="<%= require('./src/assets/node-card-logo.svg') %>">
-              <img class="project-entry__logo--responsive mx-3" src="<%= require('./src/assets/nginx-logo.svg') %>">
+              <img class="project-entry__logo--responsive mx-3" alt = "bootstrap logo" src="<%= require('./src/assets/images/logos/bootstrap-logo.svg') %>">
+              <img class="project-entry__logo--responsive mx-3" alt = "node logo" src="<%= require('./src/assets/images/logos/node-card-logo.svg') %>">
+              <img class="project-entry__logo--responsive mx-3" alt = "nginx logo" src="<%= require('./src/assets/images/logos/nginx-logo.svg') %>">
             </div>
           </div>
           <div class = "card-footer w-100 text-muted">Front End and Deployment</div>
@@ -162,13 +207,35 @@
         <!--  THUMBNAIL DESKTOP -->
 
         <button type="button" data-toggle="modal" data-target="#tictactoeModal" class = "p-0 project-entry overflow-hidden position-relative" tabIndex = "0">
-          <img class = "img-fluid project-entry__img" src= "<%= require('./src/assets/images/screenshot-tictactoe.png') %>">
+          <picture>
+              <source
+                srcset="<%= require('./src/assets/images/screenshot-tictactoe-640.webp') %> 640w,
+                <%= require('./src/assets/images/screenshot-tictactoe-768.webp') %> 768w,
+                <%= require('./src/assets/images/screenshot-tictactoe-1024.webp') %> 1024w,
+                <%= require('./src/assets/images/screenshot-tictactoe-1366.webp') %> 1366w,
+                <%= require('./src/assets/images/screenshot-tictactoe-1600.webp') %> 1600w,
+                <%= require('./src/assets/images/screenshot-tictactoe-1707.webp') %> 1707w"
+                sizes="100%"
+                type = "image/webp"
+              />
+              <source
+                srcset="<%= require('./src/assets/images/screenshot-tictactoe-640.png') %> 640w,
+                <%= require('./src/assets/images/screenshot-tictactoe-768.png') %> 768w,
+                <%= require('./src/assets/images/screenshot-tictactoe-1024.png') %> 1024w,
+                <%= require('./src/assets/images/screenshot-tictactoe-1366.png') %> 1366w,
+                <%= require('./src/assets/images/screenshot-tictactoe-1600.png') %> 1600w,
+                <%= require('./src/assets/images/screenshot-tictactoe-1707.png') %> 1707w"
+                sizes="100%"
+                type = "image/png"
+              />
+            <img class = "img-fluid project-entry__img" alt = "tictactoe screenshot" src= "<%= require('./src/assets/images/screenshot-tictactoe-1707.png') %>">
+          </picture>
           <div class = "project-entry__img-overlay d-flex flex-column justify-content-between position-absolute w-100 h-100">
             <h4 class = "text-white position-relative my-2 project-entry__title">Unbeatable Tic-tac-toe</h4>
             <div class = "project-entry__logo-div h-25 d-flex justify-content-center align-items-center">
-              <img class="project-entry__logo h-100 mx-3" src="<%= require('./src/assets/javascript-logo.svg') %>">
-              <img class="project-entry__logo h-100 mx-3" src="<%= require('./src/assets/react-logo.svg') %>">
-              <img class="project-entry__logo h-100 mx-3" src="<%= require('./src/assets/redux-logo.svg') %>">
+              <img class="project-entry__logo h-100 mx-3" alt = "javascript logo" src="<%= require('./src/assets/images/logos/javascript-logo.svg') %>">
+              <img class="project-entry__logo h-100 mx-3" alt = "react logo" src="<%= require('./src/assets/images/logos/react-logo.svg') %>">
+              <img class="project-entry__logo h-100 mx-3" alt = "redux logo" src="<%= require('./src/assets/images/logos/redux-logo.svg') %>">
             </div>
             <p class = "text-white position-relative my-2 project-entry__bottom-text">Front End</p>
           </div>
@@ -178,12 +245,35 @@
 
         <button type="button" data-toggle="modal" data-target="#tictactoeModal" class = "project-entry--responsive p-0 card" tabIndex = "0">
           <div class = "card-header w-100">Unbeatable Tic-tac-toe</div>
-          <img class = "card-img-top mt-3 mx-auto project-entry__img--responsive" src= "<%= require('./src/assets/images/screenshot-tictactoe.png') %>">
+          <picture>
+              <source
+                srcset="<%= require('./src/assets/images/screenshot-tictactoe-640.webp') %> 640w,
+                <%= require('./src/assets/images/screenshot-tictactoe-768.webp') %> 768w,
+                <%= require('./src/assets/images/screenshot-tictactoe-1024.webp') %> 1024w,
+                <%= require('./src/assets/images/screenshot-tictactoe-1366.webp') %> 1366w,
+                <%= require('./src/assets/images/screenshot-tictactoe-1600.webp') %> 1600w,
+                <%= require('./src/assets/images/screenshot-tictactoe-1707.webp') %> 1707w"
+                sizes="90%"
+                type = "image/webp"
+              />
+              <source
+                srcset="<%= require('./src/assets/images/screenshot-tictactoe-640.png') %> 640w,
+                <%= require('./src/assets/images/screenshot-tictactoe-768.png') %> 768w,
+                <%= require('./src/assets/images/screenshot-tictactoe-1024.png') %> 1024w,
+                <%= require('./src/assets/images/screenshot-tictactoe-1366.png') %> 1366w,
+                <%= require('./src/assets/images/screenshot-tictactoe-1600.png') %> 1600w,
+                <%= require('./src/assets/images/screenshot-tictactoe-1707.png') %> 1707w"
+                sizes="90%"
+                type = "image/png"
+              />
+              <img class = "card-img-top mt-3 mx-auto project-entry__img--responsive" alt = "tictactoe screenshot" src= "<%= require('./src/assets/images/screenshot-tictactoe-1707.png') %>">
+            </picture>
+          
           <div class = "card-body">
             <div class = "logo-container h-100 d-flex align-items-center">
-              <img class="project-entry__logo--responsive mx-3" src="<%= require('./src/assets/javascript-logo.svg') %>">
-              <img class="project-entry__logo--responsive mx-3" src="<%= require('./src/assets/react-logo.svg') %>">
-              <img class="project-entry__logo--responsive mx-3" src="<%= require('./src/assets/redux-logo.svg') %>">
+              <img class="project-entry__logo--responsive mx-3" alt = "javascript logo" src="<%= require('./src/assets/images/logos/javascript-logo.svg') %>">
+              <img class="project-entry__logo--responsive mx-3" alt = "react logo" src="<%= require('./src/assets/images/logos/react-logo.svg') %>">
+              <img class="project-entry__logo--responsive mx-3" alt = "redux logo" src="<%= require('./src/assets/images/logos/redux-logo.svg') %>">
             </div>
           </div>
           <div class = "card-footer w-100 text-muted">Front End</div>
@@ -192,13 +282,35 @@
       <!-- FACEBRAIN -->
 
         <button type="button" data-toggle="modal" data-target="#facebrainModal" class = "facebrain p-0 project-entry overflow-hidden position-relative" tabIndex = "0">
-          <img class = "img-fluid project-entry__img" src= "<%= require('./src/assets/images/screenshot-facebrain.png') %>">
+            <picture>
+                <source
+                  srcset="<%= require('./src/assets/images/screenshot-facebrain-640.webp') %> 640w,
+                  <%= require('./src/assets/images/screenshot-facebrain-768.webp') %> 768w,
+                  <%= require('./src/assets/images/screenshot-facebrain-1024.webp') %> 1024w,
+                  <%= require('./src/assets/images/screenshot-facebrain-1366.webp') %> 1366w,
+                  <%= require('./src/assets/images/screenshot-facebrain-1600.webp') %> 1600w,
+                  <%= require('./src/assets/images/screenshot-facebrain-1707.webp') %> 1707w"
+                  sizes="100%"                 
+                  type = "image/webp"
+                />
+                <source
+                  srcset="<%= require('./src/assets/images/screenshot-facebrain-640.png') %> 640w,
+                  <%= require('./src/assets/images/screenshot-facebrain-768.png') %> 768w,
+                  <%= require('./src/assets/images/screenshot-facebrain-1024.png') %> 1024w,
+                  <%= require('./src/assets/images/screenshot-facebrain-1366.png') %> 1366w,
+                  <%= require('./src/assets/images/screenshot-facebrain-1600.png') %> 1600w,
+                  <%= require('./src/assets/images/screenshot-facebrain-1707.png') %> 1707w"
+                  sizes="100%"                 
+                  type = "image/png"
+                />
+              <img class = "img-fluid project-entry__img" alt = "facebrain screenshot" src= "<%= require('./src/assets/images/screenshot-facebrain-1707.png') %>">
+            </picture>
           <div class = "project-entry__img-overlay d-flex flex-column justify-content-between position-absolute w-100 h-100">
             <h4 class = "text-white position-relative my-2 project-entry__title">FaceBrain</h4>
             <div class = "project-entry__logo-div h-25 d-flex justify-content-center align-items-center">
-              <img class="project-entry__logo h-100 mx-3" src="<%= require('./src/assets/react-logo.svg') %>">
-              <img class="project-entry__logo h-100 mx-3" src="<%= require('./src/assets/node-logo.svg') %>">
-              <img class="project-entry__logo h-100 mx-3" src="<%= require('./src/assets/postgres-logo.svg') %>">
+              <img class="project-entry__logo h-100 mx-3" alt = "react logo" src="<%= require('./src/assets/images/logos/react-logo.svg') %>">
+              <img class="project-entry__logo h-100 mx-3" alt = "node logo" src="<%= require('./src/assets/images/logos/node-logo.svg') %>">
+              <img class="project-entry__logo h-100 mx-3" alt = "postgreSQL logo" src="<%= require('./src/assets/images/logos/postgres-logo.svg') %>">
             </div>
             <p class = "text-white position-relative my-2 project-entry__bottom-text">Full Stack</p>
           </div>
@@ -208,12 +320,34 @@
 
         <button type="button" data-toggle="modal" data-target="#facebrainModal" class = "facebrain project-entry--responsive p-0 card" tabIndex = "0">
           <div class = "card-header w-100">FaceBrain</div>
-          <img class = "card-img-top mt-3 mx-auto project-entry__img--responsive" src= "<%= require('./src/assets/images/screenshot-facebrain.png') %>">
+          <picture>
+              <source
+                srcset="<%= require('./src/assets/images/screenshot-facebrain-640.webp') %> 640w,
+                <%= require('./src/assets/images/screenshot-facebrain-768.webp') %> 768w,
+                <%= require('./src/assets/images/screenshot-facebrain-1024.webp') %> 1024w,
+                <%= require('./src/assets/images/screenshot-facebrain-1366.webp') %> 1366w,
+                <%= require('./src/assets/images/screenshot-facebrain-1600.webp') %> 1600w,
+                <%= require('./src/assets/images/screenshot-facebrain-1707.webp') %> 1707w"
+                sizes="90%"
+                type = "image/webp"
+              />
+              <source
+                srcset="<%= require('./src/assets/images/screenshot-facebrain-640.png') %> 640w,
+                <%= require('./src/assets/images/screenshot-facebrain-768.png') %> 768w,
+                <%= require('./src/assets/images/screenshot-facebrain-1024.png') %> 1024w,
+                <%= require('./src/assets/images/screenshot-facebrain-1366.png') %> 1366w,
+                <%= require('./src/assets/images/screenshot-facebrain-1600.png') %> 1600w,
+                <%= require('./src/assets/images/screenshot-facebrain-1707.png') %> 1707w"
+                sizes="90%"
+                type = "image/png"
+              />
+              <img class = "card-img-top mt-3 mx-auto project-entry__img--responsive" alt = "facebrain screenshot" src= "<%= require('./src/assets/images/screenshot-facebrain-1707.png') %>">
+            </picture>
           <div class = "card-body">
             <div class = "logo-container h-100 d-flex align-items-center">
-              <img class="project-entry__logo--responsive mx-3" src="<%= require('./src/assets/react-logo.svg') %>">
-              <img class="project-entry__logo--responsive mx-3" src="<%= require('./src/assets/node-card-logo.svg') %>">
-              <img class="project-entry__logo--responsive mx-3" src="<%= require('./src/assets/postgres-logo.svg') %>">
+              <img class="project-entry__logo--responsive mx-3" alt = "react logo" src="<%= require('./src/assets/images/logos/react-logo.svg') %>">
+              <img class="project-entry__logo--responsive mx-3" alt = "node logo" src="<%= require('./src/assets/images/logos/node-card-logo.svg') %>">
+              <img class="project-entry__logo--responsive mx-3" alt = "postgreSQL logo" src="<%= require('./src/assets/images/logos/postgres-logo.svg') %>">
             </div>
           </div>
           <div class = "card-footer w-100 text-muted">Full Stack</div>
@@ -225,14 +359,14 @@
 
     <!--  CONTACT -->
     <div class = "nav-link-target" id = "contact"></div>
-    <section class = "container-fluid py-5 contact bg-primary" id = "contact">
+    <section class = "container-fluid py-5 contact bg-primary">
       <div class = "container">
         <h2 class = "text-white">Get in touch</h2>
-        <a class = "btn social-media-link m-3 bg-secondary" href = "https://github.com/BLBaylis">
-          <img class="social-media-logo" src="<%= require('./src/assets/linkedin-logo.svg') %>">
-        </a>
         <a class = "btn social-media-link m-3 bg-secondary" href = "https://www.linkedin.com/in/bradley-baylis/">
-          <img class="social-media-logo" src="<%= require('./src/assets/github-logo.svg') %>">
+          <img class="social-media-logo" alt = "linkedin logo" src="<%= require('./src/assets/images/logos/linkedin-logo.svg') %>">
+        </a>
+        <a class = "btn social-media-link m-3 bg-secondary" href = "https://github.com/BLBaylis">
+          <img class="social-media-logo" alt = "github logo" src="<%= require('./src/assets/images/logos/github-logo.svg') %>">
         </a>
         <h4 class = "text-white">...or you can send me an email below!</h4>
         <div class="alert mx-auto position-relative mt-3" role="alert">

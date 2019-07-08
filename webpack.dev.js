@@ -1,26 +1,26 @@
-const path = require('path');
-const Dotenv = require('dotenv-webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const Dotenv = require("dotenv-webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
 
 module.exports = {
-    devtool: 'eval-cheap-module-source-map',
-    entry: './src/index.js',
+    devtool: "eval-cheap-module-source-map",
+    entry: "./src/index.js",
     devServer: {
         port: 8080,
         contentBase: path.join(__dirname, "dist")
     },
     node: {
-        fs: 'empty'
+        fs: "empty"
     },
     module: {
         rules: [
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
+                loader: "babel-loader",
                 options: {
-                    presets: ['env']
+                    presets: ["env"]
                 }
             },
             {
@@ -44,24 +44,23 @@ module.exports = {
                         // compiles Sass to CSS
                         loader: "sass-loader",
                         options: {
-                            outputStyle: 'expanded',
+                            outputStyle: "expanded",
                             sourceMap: true,
                             sourceMapContents: true
                         }
                     }
                     // Please note we are not running postcss here
                 ]
-            }
-            ,
+            },
             {
                 // Load all images as base64 encoding if they are smaller than 8192 bytes
-                test: /\.(svg|png|jpg|gif)$/,
+                test: /\.(svg|png|jpg|gif|webp)$/,
                 use: [
                     {
-                        loader: 'url-loader',
+                        loader: "url-loader",
                         options: {
                             // On development we want to see where the file is coming from, hence we preserve the [path]
-                            name: '[path][name].[ext]?hash=[hash:20]',
+                            name: "[path][name].[ext]?hash=[hash:20]",
                             limit: 8192
                         }
                     }
@@ -70,31 +69,31 @@ module.exports = {
             {
                 // Load all images as base64 encoding if they are smaller than 8192 bytes
                 test: /\.(pdf)$/,
-                use: 'file-loader',
+                use: "file-loader"
             },
             {
                 test: /\.(mp4|webm)$/,
                 use: [
                     {
-                        loader: 'file-loader',
+                        loader: "file-loader",
                         options: {
-                            name: '[name].[hash:20].[ext]',
+                            name: "[name].[hash:20].[ext]"
                         }
                     }
                 ]
             }
-        ],
+        ]
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './index.html',
+            template: "./index.html",
             inject: true
         }),
         new Dotenv(),
         new webpack.ProvidePlugin({
-            "$":"jquery",
-            "jQuery":"jquery",
-            "window.jQuery":"jquery"
-        }),
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery"
+        })
     ]
 };
