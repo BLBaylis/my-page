@@ -55,7 +55,7 @@
       <div class = "home-video-wrapper">
         <div class = "home-video-wrapper-inner">
           <video class = "home-video" autoplay muted>
-            <source src = "<%= require('./src/assets/videos/portfolio-video-lg.mp4') %>">
+            <source src = "<%= require('./src/assets/videos/portfolio-video.mp4') %>">
           </video>
         </div>
       </div>   
@@ -369,35 +369,59 @@
           <img class="social-media-logo" alt = "github logo" src="<%= require('./src/assets/images/logos/github-logo.svg') %>">
         </a>
         <h4 class = "text-white">...or you can send me an email below!</h4>
-        <div class="alert mx-auto position-relative mt-3" role="alert">
-          <strong class = "email-status">Email sent!</strong>
-          <span class = "alert-text">Thanks for getting in touch.</span>
-        </div>
-        <form class = "mx-auto mb-3 p-4 bg-white contact-form">
-          <div class = "row">
-            <div class="form-group col-sm-6">
-              <label for="name">Name:</label>
-              <input required type="name" class="form-control" id="name" placeholder="Name">
-            </div>
-            <div class="form-group col-sm-6">
-              <label for="email">Email address:</label>
-              <input required type="email" class="form-control" id="email" placeholder="Email">
-            </div>
+        <form class="contact-form text-white mt-3">
+          <div class="alerts-div position-relative">
+              <div class="alert invisible initial" id="placeholder-alert">.
+              </div>
+              <div
+                  class="alert alert--hidden alert--oldest position-absolute initial"
+                  id="alert1"
+              ></div>
+              <div
+                  class="alert alert--hidden position-absolute"
+                  id="alert2"
+              ></div>
           </div>
-          <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea required class="form-control" id="message" rows="3"></textarea>
+          <div class="form-inner">
+              <div class="form-group">
+                  <label for="name">Name</label>
+                  <input
+                      class="form-control"
+                      id="name"
+                      placeholder="Name"
+                  />
+              </div>
+              <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      aria-describedby="email"
+                      placeholder="Enter email"
+                  />
+              </div>
+              <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea
+                      class="form-control"
+                      id="message"
+                      aria-describedby="message"
+                      placeholder="Enter message"
+                      rows="4"
+                  ></textarea>
+              </div>
+              <button type="submit" class="btn submit-btn">
+                  <span>Submit</span>
+                  <div class="lds-ring">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                  </div>
+              </button>
           </div>
-          <button
-            type="submit"
-            class="btn btn-primary d-inline-flex align-items-center"
-            id="form-submit-btn"
-          >
-            <span>Submit</span>
-            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-          </button>
         </form>
-      </div>
       </div>
     </section>
   </main>
@@ -506,6 +530,6 @@
       </div>
     </div>
   </div>
-  <footer class = "position-relative text-white px-4 d-flex justify-content-center align-items-center">Website created by © Bradley Baylis 2019</footer>
+  <footer class = "position-relative text-white px-4 py-2 d-flex justify-content-center align-items-center">Website created by © Bradley Baylis 2019</footer>
 </body>
 </html>

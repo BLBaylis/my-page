@@ -1,0 +1,185 @@
+.contact-body {
+    overflow-x: hidden;
+}
+
+.contact-form {
+    color: $primary;
+    border: solid 1px $primary;
+    background-color: $secondary;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 0.25rem;
+}
+
+.animate-contact {
+    animation: form-failed 350ms;
+}
+
+@keyframes form-failed {
+    16% {
+        transform: translatex(-20px);
+    }
+
+    51% {
+        transform: translatex(20px);
+    }
+
+    84% {
+        transform: translatex(-20px);
+    }
+
+    100% {
+        transform: initial;
+    }
+}
+
+.alerts-div {
+    margin-bottom: 1.5rem;
+}
+
+.alert {
+    color: #495057;
+    width: 100%;
+    transition: all 300ms;
+    opacity: 1;
+    top: 0;
+    border: 0;
+    margin: 0;
+}
+
+.alert-primary {
+    background-color: $accent;
+    color: $primary;
+}
+
+.alert-warning,
+.alert-danger {
+    background: #00000040;
+    color: $white;
+}
+
+.alert--hidden {
+    opacity: 0;
+    top: -66px;
+    padding: 0 1.25rem;
+}
+
+.alert--hide {
+    transition: opacity 300ms;
+    opacity: 0;
+}
+
+#alert1.initial {
+    top: 0;
+}
+
+#placeholder-alert {
+    transition-property: height, padding;
+    transition-duration: 300ms;
+    margin: 0;
+    border: 0;
+}
+
+#placeholder-alert.initial {
+    height: 0;
+    padding: 0 1.25rem;
+}
+
+.form-inner {
+    background-color: $secondary;
+    padding: 0 1.5rem 1.5rem;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-control:hover {
+    box-shadow: 0 0 0 2px $accent;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 2px $accent;
+    background: $primary;
+    color: $accent;
+}
+
+.form-control:focus::placeholder {
+    color: $accent;
+}
+
+.form-control:focus {
+    border-color: transparent;
+}
+
+.submit-btn {
+    border: solid 1px $white;
+    color: $white;
+}
+
+.submit-btn:hover {
+    border-color: $accent;
+    color: $white;
+    box-shadow: 0 0 0 2px $accent;
+}
+
+.submit-btn:focus {
+    background: $primary;
+    color: $accent;
+    box-shadow: 0 0 0 2px $accent;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    opacity: 0;
+    height: 16px;
+    width: 0;
+    margin-left: 0;
+    transition: 0.5s linear;
+    transition-property: width, margin-left, opacity;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-color: #fff transparent transparent transparent;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.submit-btn:focus .lds-ring div {
+    border-color: $accent transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 350px) {
+    .alert {
+        font-size: 14px;
+    }
+}

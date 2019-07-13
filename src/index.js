@@ -9,10 +9,9 @@ import "bootstrap/js/dist/modal";
 import "bootstrap/js/dist/alert";
 
 $(() => {
-    const homeVideo = $(".home-video");
     const contactForm = $(".contact-form");
     positionHomeVideo("DOMContentLoaded");
-    homeVideo.on("play", () => {
+    $(".home-video").on("play", () => {
         $(".navbar").removeClass("navbar--initial");
         $(".side-bar").removeClass("side-bar--initial");
     });
@@ -28,18 +27,23 @@ $(() => {
     });
     $(".scroll-link").on("click", animateScroll);
     contactForm.on("submit", handleFormSubmit);
-    contactForm.on("animationend", () => {
-        contactForm.toggleClass("initial-animation-done initial-animation");
-        $("footer").toggleClass(
-            "initial-animation-done initial-animation-footer"
-        );
+    contactForm.on("animationend", () =>
+        contactForm.removeClass("animate-contact")
+    );
+    $(".alert").on("transitionend", event => {
+        const target = $(event.target);
+        if (!target.hasClass("alert--hide")) {
+            return;
+        }
+        target
+            .addClass("alert--hidden")
+            .removeClass("alert--hide alert--oldest");
+        target.insertBefore(".alert--oldest");
     });
 });
 
 const positionHomeVideo = eventType => {
-    const video = $(".home-video");
     const homeVideoWrapperInner = $(".home-video-wrapper-inner");
-    const sideBit = $(".side-bit");
     const eventHandler = () => {
         const aspectRatio = $(window).width() / $(window).height();
         const height = document.querySelector(".home-video").offsetHeight;
@@ -92,64 +96,63 @@ const collapseMobileNavbar = event => {
 
 const handleFormSubmit = async event => {
     event.preventDefault();
-    let errCaught = false;
-    let res = false;
-    let outcome;
-    const alert = $(".alert");
-    const contactForm = $(".contact-form");
-    const toggleLoaderAnimation = () =>
-        $(".lds-ring").toggleClass("animation-running");
-    const toggleAlertAnimation = () => alert.toggleClass("alert-change");
-    toggleLoaderAnimation();
-    try {
-        res = await sendForm(event);
-    } catch (err) {
-        errCaught = true;
-    }
-    if (!errCaught) {
-        outcome = await res.json();
-    }
-    toggleLoaderAnimation();
-    const wasEmailSuccessful = !errCaught && res.ok && outcome === "success";
-    if (!contactForm.hasClass("initial-animation-done")) {
-        editAlert(wasEmailSuccessful);
-        contactForm.addClass("initial-animation");
-        $("footer").addClass("initial-animation-footer");
-    } else {
-        alert.on("transitionend", () => {
-            editAlert(wasEmailSuccessful);
-            toggleAlertAnimation();
-            alert.off("transitionend");
-        });
-        toggleAlertAnimation();
-    }
-};
-
-const sendForm = async event => {
     const name = $("#name").val();
     const email = $("#email").val();
     const message = $("#message").val();
-    console.log(process.env.API_LINK);
-    return await fetch(`${process.env.API_LINK}/contact`, {
+    const toggleLoaderAnimation = () =>
+        $(".lds-ring").toggleClass("animation-running");
+    if (name === "" || email === "" || message === "") {
+        $(event.target).addClass("animate-contact");
+        return handleAlerts("warning");
+    }
+    toggleLoaderAnimation();
+    await fetch(`${process.env.API_LINK}/contact`, {
         method: "post",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, message })
-    });
+    })
+        .then(res => res.json())
+        .then(res => {
+            if (res.emailSent === "false") {
+                throw new Error("email not sent");
+            }
+            toggleLoaderAnimation();
+            handleAlerts("primary");
+        })
+        .catch(err => {
+            console.error(err);
+            $(event.target).addClass("animate-contact");
+            toggleLoaderAnimation();
+            handleAlerts("danger");
+        });
 };
 
-const editAlert = wasEmailSuccessful => {
-    const emailStatus = $(".email-status");
-    const alertText = $(".alert-text");
-    const alert = $(".alert");
-    if (wasEmailSuccessful === true) {
-        emailStatus.text("Email sent! ");
-        alertText.text("Thanks for getting in touch.");
-        alert.addClass("alert-success");
-        alert.removeClass("alert-danger");
+const handleAlerts = alertType => {
+    let message;
+    if (alertType === "primary") {
+        message = "<strong>Email Sent. </strong><span>Thanks!</span>";
+    } else if (alertType === "warning") {
+        message = "Name, email or message missing!";
     } else {
-        emailStatus.text("Email not sent! ");
-        alertText.text("Please try again.");
-        alert.addClass("alert-danger");
-        alert.removeClass("alert-success");
+        message =
+            "<strong>Email didn't send. </strong><span>Try again later!</span>";
+    }
+    if ($(".alert--hidden").length === 2) {
+        $("#alert1")
+            .html(message)
+            .removeClass("alert-danger alert-warning alert-primary")
+            .addClass(`alert-${alertType} alert--oldest`)
+            .removeClass("alert--hidden");
+        $("#placeholder-alert").removeClass("initial");
+    } else {
+        if ($("#alert1").hasClass("initial")) {
+            $("#alert1").removeClass("initial");
+        }
+        $(".alert--oldest").addClass("alert--hide");
+        $(".alert--hidden")
+            .html(message)
+            .removeClass("alert-danger alert-warning alert-primary")
+            .addClass(`alert-${alertType} alert--oldest`)
+            .removeClass("alert--hidden");
     }
 };
