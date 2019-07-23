@@ -16,6 +16,11 @@ body {
 
 /* NAVBAR */
 
+section {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+}
+
 .navbar {
     top: 0;
     z-index: 3;
@@ -203,6 +208,10 @@ hr {
     vertical-align: text-top;
 }
 
+.scroll-link {
+    cursor: pointer;
+}
+
 .scroll-link img {
     pointer-events: none;
 }
@@ -311,19 +320,27 @@ main {
     justify-content: center;
 }
 
-.project-entry {
-    display: none;
-}
-
 .project-entry,
 .project-entry--responsive {
     flex: 1 1 auto;
     margin: 2rem auto;
-    width: 90%;
+    width: 95%;
     max-width: 650px;
 }
 
+.project-entry {
+    display: none;
+    width: 100%;
+    margin: 0 auto;
+}
+
 @media (min-width: 576px) {
+
+    .portfolio {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+
     .project-entry__logo--responsive {
         height: 50px;
         max-width: 65px;
@@ -332,6 +349,7 @@ main {
     .project-entry,
     .project-entry--responsive {
         width: 70%;
+        margin: 2rem auto
     }
 }
 
@@ -401,16 +419,23 @@ main {
 
 /* CONTACT */
 
+.social-media-logo {
+    height : 60px;
+    display: block;
+    margin : 0.5rem auto;
+}
+
 .social-media-link {
-    width: 60px;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    padding: 10px;
-    background: #383838;
+    display: inline-block;
+    width: 250px;
+    padding: 13px;
+    border-radius:2px;
+    cursor: pointer;
 }
 
 .social-media-link:hover {
-    background: #383838;
+    background: $secondary;
+    transition: 250ms;
 }
 
 .animation-running {

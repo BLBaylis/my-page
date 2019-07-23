@@ -50,7 +50,7 @@
 
   <!-- HOME -->
 
-  <section class = "home" id = "home">
+  <section class = "home py-0" id = "home">
     <div class = "home-inner">
       <div class = "home-video-wrapper">
         <div class = "home-video-wrapper-inner">
@@ -83,7 +83,7 @@
 
     <!--  ABOUT -->
     <div class = "nav-link-target" id = "about"></div>
-    <section class="container py-5 text-left about bg-primary text-white">
+    <section class="container text-left about bg-primary text-white">
         <h2 class = "text-center mb-3">About Me</h2>
         <p class = "px-2">Hi! My name is Brad and I'm primarily a front end
           developer based near London, though I have an interest in full stack
@@ -119,13 +119,11 @@
         </ul>
         <a rel = "noopener noreferrer" class = "btn btn-block btn-secondary text-white mt-md-5" href = "<%= require('./src/assets/Bradley-Baylis-CV.pdf') %>" target = "_blank">My CV</a>
     </section>
-    <hr class="divider"/>
     <!--  PORTFOLIO -->
     <div class = "nav-link-target" id = "portfolio"></div>
-    <section class = "py-5 container-fluid text-white px-0 bg-primary">
-      <h2>Portfolio</h2>
-
-      <div class = "d-flex mt-4 mx-lg-auto align-items-center justify-content-lg-center flex-lg-row flex-column">
+    <section class = "container-fluid text-white bg-secondary portfolio">
+      <h2 class = "my-5">Portfolio</h2>
+      <div class = "d-flex mx-lg-auto align-items-center justify-content-lg-center flex-lg-row flex-column">
       <!--  WORKINDTRAINING -->
 
         <!--  THUMBNAIL DESKTOP -->
@@ -355,20 +353,29 @@
       </div>
 
     </section>
-    <hr class="divider"/>
 
     <!--  CONTACT -->
     <div class = "nav-link-target" id = "contact"></div>
-    <section class = "container-fluid py-5 contact bg-primary">
+    <section class = "container-fluid contact bg-primary">
       <div class = "container">
         <h2 class = "text-white">Get in touch</h2>
-        <a class = "btn social-media-link m-3 bg-secondary" href = "https://www.linkedin.com/in/bradley-baylis/">
-          <img class="social-media-logo" alt = "linkedin logo" src="<%= require('./src/assets/images/logos/linkedin-logo.svg') %>">
+        <a class = "social-media-link text-white my-3 mx-3">
+          <img 
+            class="social-media-logo" 
+            alt = "linkedin logo" 
+            src="<%= require('./src/assets/images/logos/linkedin-logo.svg') %>"
+            href = "https://www.linkedin.com/in/bradley-baylis/">
+          linkedin.com/in/bradley-baylis
         </a>
-        <a class = "btn social-media-link m-3 bg-secondary" href = "https://github.com/BLBaylis">
-          <img class="social-media-logo" alt = "github logo" src="<%= require('./src/assets/images/logos/github-logo.svg') %>">
+        <a class = "social-media-link text-white my-3 mx-3">
+          <img 
+            class="social-media-logo" 
+            alt = "github logo" 
+            src="<%= require('./src/assets/images/logos/github-logo.svg') %>"
+            href = "https://github.com/BLBaylis">
+            github.com/BLBaylis
         </a>
-        <h4 class = "text-white">...or you can send me an email below!</h4>
+        <h4 class = "text-white mt-5">...or you can send me an email below!</h4>
         <form class="contact-form text-white mt-3">
           <div class="alerts-div position-relative">
               <div class="alert invisible initial" id="placeholder-alert">.
