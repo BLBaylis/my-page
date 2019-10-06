@@ -11,10 +11,7 @@ import "bootstrap/js/dist/alert";
 $(() => {
     const contactForm = $(".contact-form");
     positionHomeVideo("DOMContentLoaded");
-    $(".home-video").on("play", () => {
-        $(".navbar").removeClass("navbar--initial");
-        $(".side-bar").removeClass("side-bar--initial");
-    });
+    $(".home-video").on("play", () => $(".side-bar").removeClass("side-bar--initial"));
     $.easing.easeInOutExpo = function(x, t, b, c, d) {
         if (t == 0) return b;
         if (t == d) return b + c;

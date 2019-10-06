@@ -24,11 +24,6 @@ section {
 .navbar {
     top: 0;
     z-index: 3;
-    transition: top 400ms ease $video-play-time;
-}
-
-.navbar--initial {
-    top: -56px;
 }
 
 .navbar-brand {
