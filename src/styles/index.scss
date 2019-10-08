@@ -1,6 +1,9 @@
-$primary: #171a2c;
-$secondary: #bc2ad3;
-$accent: #5bffdb;
+$primary: rgb(23, 26, 44);
+$primary-alpha: rgba(23, 26, 44, 0.8);
+$secondary: rgb(2, 12, 27);
+$secondary-alpha: rgba(2, 12, 27, 0.95);
+$accent: #bc2ad3;
+$accent-alpha: rgba(188, 42, 211, 0.8);
 $navbar-height: 56px;
 $alert-size-xs: 74px;
 $alert-size-sm: 50px;
@@ -19,6 +22,22 @@ body {
     font-style: normal;
     font-weight: normal;
     src: local('Calibre Regular'), url('../assets/fonts/calibre/CalibreRegular.woff') format('woff');
+}
+
+.bg-primary-alpha {
+    background: $primary-alpha
+}
+
+.bg-accent {
+    background: $accent
+}
+
+.bg-accent-alpha {
+    background: $accent-alpha
+}
+
+.bg-secondary-alpha {
+    background: $secondary-alpha
 }
 
 /* NAVBAR */
@@ -81,21 +100,17 @@ section {
     top: -#{$navbar-height};
 }
 
-/* HOME */
+/* BG-VIDEO */
 
-.home {
-    height: 100%;
-    font-family: calibre
-}
-
-.home-inner {
+.bg-video {
     position: fixed;
     height: 100%;
     width: 100%;
-    z-index: 0;
+    z-index: -1;
+    overflow-x: hidden
 }
 
-.home-video-wrapper {
+.bg-video-wrapper {
     position: absolute;
     top: 0;
     left: 0;
@@ -106,12 +121,12 @@ section {
     background: rgba(17, 18, 33, 1);
 }
 
-.home-video-wrapper-inner {
+.bg-video-wrapper-inner {
     position: absolute;
     height: 100%;
 }
 
-.home-video-wrapper-inner::before {
+.bg-video-wrapper-inner::before {
     content: "";
     display: block;
     position: absolute;
@@ -122,8 +137,18 @@ section {
     transition: right 100ms linear;
 }
 
-.home-video {
+.video {
     height: 100%;
+}
+
+/* HOME */
+
+.home {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    font-family: calibre;
+    overflow: hidden
 }
 
 .side-bar {
@@ -162,7 +187,7 @@ section {
         right: -39%;
     }
 
-    .home-video-wrapper-inner::before {
+    .bg-video-wrapper-inner::before {
         background: rgb(255, 255, 255);
         background: linear-gradient(
             90deg,
@@ -229,8 +254,8 @@ main {
     z-index: 2;
 }
 
-.about {
-    max-width: 690px;
+.about-content {
+    max-width: 690px
 }
 
 /* PORTFOLIO */

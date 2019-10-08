@@ -11,7 +11,7 @@ import "bootstrap/js/dist/alert";
 $(() => {
     const contactForm = $(".contact-form");
     positionHomeVideo("DOMContentLoaded");
-    $(".home-video").on("play", () => $(".side-bar").removeClass("side-bar--initial"));
+    $(".video").on("play", () => $(".side-bar").removeClass("side-bar--initial"));
     $.easing.easeInOutExpo = function(x, t, b, c, d) {
         if (t == 0) return b;
         if (t == d) return b + c;
@@ -40,16 +40,16 @@ $(() => {
 });
 
 const positionHomeVideo = eventType => {
-    const homeVideoWrapperInner = $(".home-video-wrapper-inner");
+    const videoWrapperInner = $(".bg-video-wrapper-inner");
     const eventHandler = () => {
         const aspectRatio = $(window).width() / $(window).height();
-        const height = document.querySelector(".home-video").offsetHeight;
+        const height = document.querySelector(".video").offsetHeight;
         const width = 1.77 * height;
         const right = -0.39 * width;
         if (aspectRatio < 1.0875) {
-            homeVideoWrapperInner.css("right", right);
+            videoWrapperInner.css("right", right);
         } else if (aspectRatio <= 1.775) {
-            homeVideoWrapperInner.css("right", "initial");
+            videoWrapperInner.css("right", "initial");
         }
     };
     if (eventType === "resize") {

@@ -47,36 +47,36 @@
       </ul>
     </div>
   </nav>
+  <!-- BG-VIDEO -->
+  <div class = "bg-video">
+    <div class = "bg-video-wrapper">
+      <div class = "bg-video-wrapper-inner">
+        <video class = "video" autoplay muted>
+          <source src = "<%= require('./src/assets/videos/portfolio-video.mp4') %>">
+        </video>
+      </div>
+    </div> 
+  </div>
 
   <!-- HOME -->
 
   <section class = "home py-0" id = "home">
-    <div class = "home-inner">
-      <div class = "home-video-wrapper">
-        <div class = "home-video-wrapper-inner">
-          <video class = "home-video" autoplay muted>
-            <source src = "<%= require('./src/assets/videos/portfolio-video.mp4') %>">
-          </video>
-        </div>
-      </div>   
-      <div class = "side-bar side-bar--initial d-flex flex-column align-items-center text-center">
-        <h1 class = "text-white my-0">
-          <span class = "heading">Bradley Baylis</span>
-          <br/>
-          <span class = "subheading">Front End Developer</span>
-        </h1>
-        <a class = "scroll-link chevron mt-auto" href = "#about" alt = "scroll to content">
-          <img class = "mx-auto" alt = "downwards pointing arrow" src="<%= require('./src/assets/images/logos/chevron.svg') %>">
-        </a>
-      </div>
+    <div class = "side-bar side-bar--initial d-flex flex-column align-items-center text-center">
+      <h1 class = "text-white my-0">
+        <span class = "heading">Bradley Baylis</span>
+        <br/>
+        <span class = "subheading">Front End Developer</span>
+      </h1>
+      <a class = "scroll-link chevron mt-auto" href = "#about" alt = "scroll to content">
+        <img class = "mx-auto" alt = "downwards pointing arrow" src="<%= require('./src/assets/images/logos/chevron.svg') %>">
+      </a>
     </div>
   </section>
 
-  <main role="main" class="container-fluid px-0 text-center bg-primary" id = "main">
-
     <!--  ABOUT -->
     <div class = "nav-link-target" id = "about"></div>
-    <section class="container text-left about bg-primary text-white">
+    <div class="container-fluid text-left about bg-secondary-alpha text-white">
+    <section class = "about-content mx-auto">
         <h2 class = "text-center mb-3">About Me</h2>
         <p class = "px-2">Hi! My name is Brad and I am a self-taught front end developer
            based near London. I particularly relish working with Javascript and React.js. I consider
@@ -120,12 +120,13 @@
             <span>🧘</span>
           </li>
         </ul>
-        <a rel = "noopener noreferrer" class = "btn btn-block btn-secondary text-white mt-md-5" href = "<%= require('./src/assets/Bradley-Baylis-CV.pdf') %>" target = "_blank">My CV</a>
+        <a rel = "noopener noreferrer" class = "btn btn-block bg-accent text-white mt-md-5" href = "<%= require('./src/assets/Bradley-Baylis-CV.pdf') %>" target = "_blank">My CV</a>
     </section>
+    </div>
     <!--  PORTFOLIO -->
     <div class = "nav-link-target" id = "portfolio"></div>
-    <section class = "container-fluid text-white bg-secondary portfolio">
-      <h2 class = "mb-5">Portfolio</h2>
+    <section class = "container-fluid text-white bg-accent-alpha portfolio text-center">
+      <h2 class = "mb-5 mx-auto">Portfolio</h2>
       <div class = "d-flex mx-lg-auto align-items-center justify-content-lg-center flex-lg-row flex-column">
       <!--  WORKINDTRAINING -->
 
@@ -359,7 +360,7 @@
 
     <!--  CONTACT -->
     <div class = "nav-link-target" id = "contact"></div>
-    <section class = "container-fluid contact bg-primary">
+    <section class = "container-fluid contact bg-primary-alpha text-center">
       <div class = "container">
         <h2 class = "text-white">Get in touch</h2>
         <a class = "social-media-link text-white my-3 mx-3">
@@ -434,7 +435,6 @@
         </form>
       </div>
     </section>
-  </main>
 
   <!--  WORKINDTRAINING MODAL -->
 
@@ -540,6 +540,6 @@
       </div>
     </div>
   </div>
-  <footer class = "position-relative text-white px-4 py-2 d-flex justify-content-center align-items-center">Website created by © Bradley Baylis 2019</footer>
+  <footer class = "position-relative bg-secondary text-white px-4 py-2 d-flex justify-content-center align-items-center">Website created by © Bradley Baylis 2019</footer>
 </body>
 </html>
