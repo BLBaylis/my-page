@@ -40,7 +40,9 @@ body {
     background: $secondary-alpha
 }
 
-/* NAVBAR */
+/*------------------*/
+/*     NAVBAR       */
+/*------------------*/
 
 section {
     padding-top: 8rem;
@@ -100,7 +102,9 @@ section {
     top: -#{$navbar-height};
 }
 
-/* BG-VIDEO */
+/*------------------*/
+/*     BG-VIDEO     */
+/*------------------*/
 
 .bg-video {
     position: fixed;
@@ -141,7 +145,9 @@ section {
     height: 100%;
 }
 
-/* HOME */
+/*------------------*/
+/*      HOME        */
+/*------------------*/
 
 .home {
     position: relative;
@@ -152,25 +158,17 @@ section {
 }
 
 .side-bar {
-    position: absolute;
     min-height: 424px;
-    height: 100%;
-    justify-content: space-evenly;
-    padding-top: $navbar-height;
+    height: calc(100% - 56px);
     width: 100%;
+    position: absolute;
     right: 0;
     background: rgba(21, 21, 42, 0.9);
+    bottom: 0;
+    justify-content: center;
+    padding: 0 50px;
     transition: right 400ms ease $video-play-time + 400;
 }
-
-/*CHANGED*/
-.side-bar {
-    padding: 0 50px;
-    bottom: 0;
-    height: calc(100% - 56px);
-    justify-content: center;
-}
-/**/
 
 .side-bar--initial {
     right: -100%;
@@ -180,7 +178,6 @@ section {
     .side-bar {
         min-width: 300px;
         width: 39%;
-        background: rgba(21, 21, 42, 0.9);
     }
 
     .side-bar--initial {
@@ -238,27 +235,17 @@ section {
     pointer-events: none;
 }
 
-@media (min-height: 520px) {
-    .side-bar {
-        justify-content: center;
-    }
-
-    /*h1 {
-        position: relative;
-        top: -25px;
-    }*/
-}
-
-main {
-    position: relative;
-    z-index: 2;
-}
+/*------------------*/
+/*      ABOUT       */
+/*------------------*/
 
 .about-content {
     max-width: 690px
 }
 
-/* PORTFOLIO */
+/*------------------*/
+/*    PORTFOLIO     */
+/*------------------*/
 
 .project-entry__img--responsive {
     width: 90%;
@@ -376,7 +363,9 @@ main {
     align-items: stretch;
 }
 
-/* CONTACT */
+/*------------------*/
+/*     CONTACT      */
+/*------------------*/
 
 .social-media-logo {
     height : 60px;
@@ -388,12 +377,14 @@ main {
     display: inline-block;
     width: 250px;
     padding: 13px;
-    border-radius:2px;
+    border-radius:4px;
+    border: solid 2px $accent;
     cursor: pointer;
+    background: $secondary
 }
 
 .social-media-link:hover {
-    background: $secondary;
+    background: $accent;
     transition: 250ms;
 }
 
@@ -452,9 +443,5 @@ footer {
 
     .project-entry--responsive {
         display: none;
-    }
-
-    .social-media-link {
-        background: transparent;
     }
 }
