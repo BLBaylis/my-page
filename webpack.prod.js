@@ -80,7 +80,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(mp4|webm)$/,
+                test: /\.(mp4|webm|woff)$/,
                 use: [
                     {
                         loader: "file-loader",

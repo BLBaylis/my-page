@@ -14,6 +14,13 @@ body {
     height: 100%;
 }
 
+@font-face {
+    font-family: 'calibre';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Calibre Regular'), url('../assets/fonts/calibre/CalibreRegular.woff') format('woff');
+}
+
 /* NAVBAR */
 
 section {
@@ -24,6 +31,7 @@ section {
 .navbar {
     top: 0;
     z-index: 3;
+    border-bottom: solid 1px rgb(21, 21, 42)
 }
 
 .navbar-brand {
@@ -77,6 +85,7 @@ section {
 
 .home {
     height: 100%;
+    font-family: calibre
 }
 
 .home-inner {
@@ -129,6 +138,15 @@ section {
     transition: right 400ms ease $video-play-time + 400;
 }
 
+/*CHANGED*/
+.side-bar {
+    padding: 0 50px;
+    bottom: 0;
+    height: calc(100% - 56px);
+    justify-content: center;
+}
+/**/
+
 .side-bar--initial {
     right: -100%;
 }
@@ -154,53 +172,37 @@ section {
     }
 }
 
-.avatar {
-    height: 66vw;
-    width: 66vw;
-    max-height: 200px;
-    max-width: 200px;
+.heading {
+    display: inline-block;
+    font-size: 50px;
+    line-height: 1.1;
+    font-weight: 600;
+    max-width: 145px
 }
 
-.avatar::before {
-    animation: pulse 2s linear infinite;
-    border: #fff solid 8px;
-    border-radius: 9999px;
-    box-sizing: border-box;
-    content: " ";
-    height: 120%;
-    left: -10%;
-    opacity: 0.6;
+.line-break {
+    display: none
+}
+
+.subheading {
+    @extend .heading;
+    color: rgb(136, 146, 176);
+    max-width: initial;
+}
+
+.scroll-link.chevron {
     position: absolute;
-    top: -10%;
-    transform: scale(0.714);
-    width: 120%;
-    z-index: 1;
+    bottom: 10%;
 }
 
-.avatar__img {
-    z-index: 2;
-}
-
-@keyframes pulse {
-    to {
-        opacity: 0;
-        transform: scale(1);
+@media (min-width: 497px) {
+    .heading {
+        max-width: initial
     }
-}
 
-.display-3 {
-    font-size: 2.5rem;
-}
-
-hr {
-    border-color: #fff;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.display-4 {
-    font-size: 2rem;
-    vertical-align: text-top;
+    .line-break {
+        display: initial;
+    }
 }
 
 .scroll-link {
@@ -216,20 +218,10 @@ hr {
         justify-content: center;
     }
 
-    h1 {
+    /*h1 {
         position: relative;
         top: -25px;
-    }
-
-    .scroll-link.chevron {
-        position: absolute;
-        bottom: 10%;
-    }
-
-    .avatar {
-        top: -25px;
-        margin-bottom: 1rem;
-    }
+    }*/
 }
 
 main {
