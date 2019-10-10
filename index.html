@@ -73,9 +73,10 @@
     </div>
   </section>
 
-    <!--  ABOUT -->
-    <div class = "nav-link-target" id = "about"></div>
-    <div class="container-fluid text-left about bg-secondary-alpha text-white">
+  <!--  ABOUT -->
+
+  <div class = "nav-link-target" id = "about"></div>
+  <div class="container-fluid text-left about bg-secondary-alpha text-white">
     <section class = "about-content mx-auto">
         <h2 class = "text-center mb-3">About Me</h2>
         <p class = "px-2">Hi! My name is Brad and I am a self-taught front end developer
@@ -122,424 +123,223 @@
         </ul>
         <a rel = "noopener noreferrer" class = "btn btn-block bg-accent text-white mt-md-5" href = "<%= require('./src/assets/Bradley-Baylis-CV.pdf') %>" target = "_blank">My CV</a>
     </section>
-    </div>
-    <!--  PORTFOLIO -->
-    <div class = "nav-link-target" id = "portfolio"></div>
-    <section class = "container-fluid text-white bg-accent-alpha portfolio text-center">
-      <h2 class = "mb-5 mx-auto">Portfolio</h2>
-      <div class = "d-flex mx-lg-auto align-items-center justify-content-lg-center flex-lg-row flex-column">
-      <!--  WORKINDTRAINING -->
-
-        <!--  THUMBNAIL DESKTOP -->
-
-        <button type="button" data-toggle="modal" data-target="#workindModal" class = "workind p-0 project-entry overflow-hidden position-relative" tabIndex = "0">
-            <picture>
-                <source
-                  srcset="<%= require('./src/assets/images/screenshot-workindtraining-640.webp') %> 640w,
-                  <%= require('./src/assets/images/screenshot-workindtraining-768.webp') %> 768w,
-                  <%= require('./src/assets/images/screenshot-workindtraining-1024.webp') %> 1024w,
-                  <%= require('./src/assets/images/screenshot-workindtraining-1366.webp') %> 1366w,
-                  <%= require('./src/assets/images/screenshot-workindtraining-1600.webp') %> 1600w,
-                  <%= require('./src/assets/images/screenshot-workindtraining-1706.webp') %> 1707w"
-                  sizes="100%"
-                  type = "image/webp"
-                />
-                <source
-                  srcset="<%= require('./src/assets/images/screenshot-workindtraining-640.png') %> 640w,
-                  <%= require('./src/assets/images/screenshot-workindtraining-768.png') %> 768w,
-                  <%= require('./src/assets/images/screenshot-workindtraining-1024.png') %> 1024w,
-                  <%= require('./src/assets/images/screenshot-workindtraining-1366.png') %> 1366w,
-                  <%= require('./src/assets/images/screenshot-workindtraining-1600.png') %> 1600w,
-                  <%= require('./src/assets/images/screenshot-workindtraining-1706.png') %> 1707w"
-                  sizes="100%"
-                  type = "image/png"
-                />
-              <img class = "img-fluid project-entry__img" alt = "workindtraining screenshot" src= "<%= require('./src/assets/images/screenshot-workindtraining-1706.png') %>">
-            </picture>
-            <div class = "project-entry__img-overlay d-flex flex-column justify-content-between position-absolute w-100 h-100">
-              <h4 class = "text-white position-relative my-2 project-entry__title">Workind Training</h4>
-              <div class = "project-entry__logo-div h-25 d-flex justify-content-center align-items-center">
-                <img class="project-entry__logo h-100 mx-3" alt = "bootstrap logo" src="<%= require('./src/assets/images/logos/bootstrap-logo.svg') %>">
-                <img class="project-entry__logo h-100 mx-3" alt = "node logo" src="<%= require('./src/assets/images/logos/node-logo.svg') %>">
-                <img class="project-entry__logo h-25 mx-3" alt = "nginx logo" src="<%= require('./src/assets/images/logos/nginx-logo.svg') %>">
-              </div>
-              <p class = "text-white position-relative my-2 project-entry__bottom-text">Front End and Deployment</p>
-            </div>
-          </button>
-
-        <!-- THUMBNAIL MOBILE -->
-
-        <button type="button" data-toggle="modal" data-target="#workindModal" class = "workind project-entry--responsive p-0 card" tabIndex = "0">
-          <div class = "card-header w-100">Workind Training</div>
-          <picture>
-              <source
-                srcset="<%= require('./src/assets/images/screenshot-workindtraining-640.webp') %> 640w,
-                <%= require('./src/assets/images/screenshot-workindtraining-768.webp') %> 768w,
-                <%= require('./src/assets/images/screenshot-workindtraining-1024.webp') %> 1024w,
-                <%= require('./src/assets/images/screenshot-workindtraining-1366.webp') %> 1366w,
-                <%= require('./src/assets/images/screenshot-workindtraining-1600.webp') %> 1600w,
-                <%= require('./src/assets/images/screenshot-workindtraining-1706.webp') %> 1707w"
-                sizes="90%"
-                type = "image/webp"
-              />
-              <source
-                srcset="<%= require('./src/assets/images/screenshot-workindtraining-640.png') %> 640w,
-                <%= require('./src/assets/images/screenshot-workindtraining-768.png') %> 768w,
-                <%= require('./src/assets/images/screenshot-workindtraining-1024.png') %> 1024w,
-                <%= require('./src/assets/images/screenshot-workindtraining-1366.png') %> 1366w,
-                <%= require('./src/assets/images/screenshot-workindtraining-1600.png') %> 1600w,
-                <%= require('./src/assets/images/screenshot-workindtraining-1706.png') %> 1707w"
-                sizes="90%"
-                type = "image/png"
-              />
-              <img class = "card-img-top mt-3 mx-auto project-entry__img--responsive" alt = "workindtraining screenshot" src= "<%= require('./src/assets/images/screenshot-workindtraining-1706.png') %>">
-            </picture>
-          <div class = "card-body">
-            <div class = "logo-container h-100 d-flex align-items-center">
-              <img class="project-entry__logo--responsive mx-3" alt = "bootstrap logo" src="<%= require('./src/assets/images/logos/bootstrap-logo.svg') %>">
-              <img class="project-entry__logo--responsive mx-3" alt = "node logo" src="<%= require('./src/assets/images/logos/node-card-logo.svg') %>">
-              <img class="project-entry__logo--responsive mx-3" alt = "nginx logo" src="<%= require('./src/assets/images/logos/nginx-logo.svg') %>">
-            </div>
-          </div>
-          <div class = "card-footer w-100 text-muted">Front End and Deployment</div>
-        </button>
-
-      <!--  TICTACTOE -->
-
-        <!--  THUMBNAIL DESKTOP -->
-
-        <button type="button" data-toggle="modal" data-target="#tictactoeModal" class = "p-0 project-entry overflow-hidden position-relative" tabIndex = "0">
-          <picture>
-              <source
-                srcset="<%= require('./src/assets/images/screenshot-tictactoe-640.webp') %> 640w,
-                <%= require('./src/assets/images/screenshot-tictactoe-768.webp') %> 768w,
-                <%= require('./src/assets/images/screenshot-tictactoe-1024.webp') %> 1024w,
-                <%= require('./src/assets/images/screenshot-tictactoe-1366.webp') %> 1366w,
-                <%= require('./src/assets/images/screenshot-tictactoe-1600.webp') %> 1600w,
-                <%= require('./src/assets/images/screenshot-tictactoe-1707.webp') %> 1707w"
-                sizes="100%"
-                type = "image/webp"
-              />
-              <source
-                srcset="<%= require('./src/assets/images/screenshot-tictactoe-640.png') %> 640w,
-                <%= require('./src/assets/images/screenshot-tictactoe-768.png') %> 768w,
-                <%= require('./src/assets/images/screenshot-tictactoe-1024.png') %> 1024w,
-                <%= require('./src/assets/images/screenshot-tictactoe-1366.png') %> 1366w,
-                <%= require('./src/assets/images/screenshot-tictactoe-1600.png') %> 1600w,
-                <%= require('./src/assets/images/screenshot-tictactoe-1707.png') %> 1707w"
-                sizes="100%"
-                type = "image/png"
-              />
-            <img class = "img-fluid project-entry__img" alt = "tictactoe screenshot" src= "<%= require('./src/assets/images/screenshot-tictactoe-1707.png') %>">
-          </picture>
-          <div class = "project-entry__img-overlay d-flex flex-column justify-content-between position-absolute w-100 h-100">
-            <h4 class = "text-white position-relative my-2 project-entry__title">Unbeatable Tic-tac-toe</h4>
-            <div class = "project-entry__logo-div h-25 d-flex justify-content-center align-items-center">
-              <img class="project-entry__logo h-100 mx-3" alt = "javascript logo" src="<%= require('./src/assets/images/logos/javascript-logo.svg') %>">
-              <img class="project-entry__logo h-100 mx-3" alt = "react logo" src="<%= require('./src/assets/images/logos/react-logo.svg') %>">
-              <img class="project-entry__logo h-100 mx-3" alt = "redux logo" src="<%= require('./src/assets/images/logos/redux-logo.svg') %>">
-            </div>
-            <p class = "text-white position-relative my-2 project-entry__bottom-text">Front End</p>
-          </div>
-        </button>
-
-        <!-- THUMBNAIL MOBILE -->
-
-        <button type="button" data-toggle="modal" data-target="#tictactoeModal" class = "project-entry--responsive p-0 card" tabIndex = "0">
-          <div class = "card-header w-100">Unbeatable Tic-tac-toe</div>
-          <picture>
-              <source
-                srcset="<%= require('./src/assets/images/screenshot-tictactoe-640.webp') %> 640w,
-                <%= require('./src/assets/images/screenshot-tictactoe-768.webp') %> 768w,
-                <%= require('./src/assets/images/screenshot-tictactoe-1024.webp') %> 1024w,
-                <%= require('./src/assets/images/screenshot-tictactoe-1366.webp') %> 1366w,
-                <%= require('./src/assets/images/screenshot-tictactoe-1600.webp') %> 1600w,
-                <%= require('./src/assets/images/screenshot-tictactoe-1707.webp') %> 1707w"
-                sizes="90%"
-                type = "image/webp"
-              />
-              <source
-                srcset="<%= require('./src/assets/images/screenshot-tictactoe-640.png') %> 640w,
-                <%= require('./src/assets/images/screenshot-tictactoe-768.png') %> 768w,
-                <%= require('./src/assets/images/screenshot-tictactoe-1024.png') %> 1024w,
-                <%= require('./src/assets/images/screenshot-tictactoe-1366.png') %> 1366w,
-                <%= require('./src/assets/images/screenshot-tictactoe-1600.png') %> 1600w,
-                <%= require('./src/assets/images/screenshot-tictactoe-1707.png') %> 1707w"
-                sizes="90%"
-                type = "image/png"
-              />
-              <img class = "card-img-top mt-3 mx-auto project-entry__img--responsive" alt = "tictactoe screenshot" src= "<%= require('./src/assets/images/screenshot-tictactoe-1707.png') %>">
-            </picture>
-          
-          <div class = "card-body">
-            <div class = "logo-container h-100 d-flex align-items-center">
-              <img class="project-entry__logo--responsive mx-3" alt = "javascript logo" src="<%= require('./src/assets/images/logos/javascript-logo.svg') %>">
-              <img class="project-entry__logo--responsive mx-3" alt = "react logo" src="<%= require('./src/assets/images/logos/react-logo.svg') %>">
-              <img class="project-entry__logo--responsive mx-3" alt = "redux logo" src="<%= require('./src/assets/images/logos/redux-logo.svg') %>">
-            </div>
-          </div>
-          <div class = "card-footer w-100 text-muted">Front End</div>
-        </button>
-
-      <!-- FACEBRAIN -->
-
-        <button type="button" data-toggle="modal" data-target="#facebrainModal" class = "facebrain p-0 project-entry overflow-hidden position-relative" tabIndex = "0">
-            <picture>
-                <source
-                  srcset="<%= require('./src/assets/images/screenshot-facebrain-640.webp') %> 640w,
-                  <%= require('./src/assets/images/screenshot-facebrain-768.webp') %> 768w,
-                  <%= require('./src/assets/images/screenshot-facebrain-1024.webp') %> 1024w,
-                  <%= require('./src/assets/images/screenshot-facebrain-1366.webp') %> 1366w,
-                  <%= require('./src/assets/images/screenshot-facebrain-1600.webp') %> 1600w,
-                  <%= require('./src/assets/images/screenshot-facebrain-1707.webp') %> 1707w"
-                  sizes="100%"                 
-                  type = "image/webp"
-                />
-                <source
-                  srcset="<%= require('./src/assets/images/screenshot-facebrain-640.png') %> 640w,
-                  <%= require('./src/assets/images/screenshot-facebrain-768.png') %> 768w,
-                  <%= require('./src/assets/images/screenshot-facebrain-1024.png') %> 1024w,
-                  <%= require('./src/assets/images/screenshot-facebrain-1366.png') %> 1366w,
-                  <%= require('./src/assets/images/screenshot-facebrain-1600.png') %> 1600w,
-                  <%= require('./src/assets/images/screenshot-facebrain-1707.png') %> 1707w"
-                  sizes="100%"                 
-                  type = "image/png"
-                />
-              <img class = "img-fluid project-entry__img" alt = "facebrain screenshot" src= "<%= require('./src/assets/images/screenshot-facebrain-1707.png') %>">
-            </picture>
-          <div class = "project-entry__img-overlay d-flex flex-column justify-content-between position-absolute w-100 h-100">
-            <h4 class = "text-white position-relative my-2 project-entry__title">FaceBrain</h4>
-            <div class = "project-entry__logo-div h-25 d-flex justify-content-center align-items-center">
-              <img class="project-entry__logo h-100 mx-3" alt = "react logo" src="<%= require('./src/assets/images/logos/react-logo.svg') %>">
-              <img class="project-entry__logo h-100 mx-3" alt = "node logo" src="<%= require('./src/assets/images/logos/node-logo.svg') %>">
-              <img class="project-entry__logo h-100 mx-3" alt = "postgreSQL logo" src="<%= require('./src/assets/images/logos/postgres-logo.svg') %>">
-            </div>
-            <p class = "text-white position-relative my-2 project-entry__bottom-text">Full Stack</p>
-          </div>
-        </button>
-
-        <!-- THUMBNAIL MOBILE -->
-
-        <button type="button" data-toggle="modal" data-target="#facebrainModal" class = "facebrain project-entry--responsive p-0 card" tabIndex = "0">
-          <div class = "card-header w-100">FaceBrain</div>
-          <picture>
-              <source
-                srcset="<%= require('./src/assets/images/screenshot-facebrain-640.webp') %> 640w,
-                <%= require('./src/assets/images/screenshot-facebrain-768.webp') %> 768w,
-                <%= require('./src/assets/images/screenshot-facebrain-1024.webp') %> 1024w,
-                <%= require('./src/assets/images/screenshot-facebrain-1366.webp') %> 1366w,
-                <%= require('./src/assets/images/screenshot-facebrain-1600.webp') %> 1600w,
-                <%= require('./src/assets/images/screenshot-facebrain-1707.webp') %> 1707w"
-                sizes="90%"
-                type = "image/webp"
-              />
-              <source
-                srcset="<%= require('./src/assets/images/screenshot-facebrain-640.png') %> 640w,
-                <%= require('./src/assets/images/screenshot-facebrain-768.png') %> 768w,
-                <%= require('./src/assets/images/screenshot-facebrain-1024.png') %> 1024w,
-                <%= require('./src/assets/images/screenshot-facebrain-1366.png') %> 1366w,
-                <%= require('./src/assets/images/screenshot-facebrain-1600.png') %> 1600w,
-                <%= require('./src/assets/images/screenshot-facebrain-1707.png') %> 1707w"
-                sizes="90%"
-                type = "image/png"
-              />
-              <img class = "card-img-top mt-3 mx-auto project-entry__img--responsive" alt = "facebrain screenshot" src= "<%= require('./src/assets/images/screenshot-facebrain-1707.png') %>">
-            </picture>
-          <div class = "card-body">
-            <div class = "logo-container h-100 d-flex align-items-center">
-              <img class="project-entry__logo--responsive mx-3" alt = "react logo" src="<%= require('./src/assets/images/logos/react-logo.svg') %>">
-              <img class="project-entry__logo--responsive mx-3" alt = "node logo" src="<%= require('./src/assets/images/logos/node-card-logo.svg') %>">
-              <img class="project-entry__logo--responsive mx-3" alt = "postgreSQL logo" src="<%= require('./src/assets/images/logos/postgres-logo.svg') %>">
-            </div>
-          </div>
-          <div class = "card-footer w-100 text-muted">Full Stack</div>
-        </button>
-      </div>
-
-    </section>
-
-    <!--  CONTACT -->
-    <div class = "nav-link-target" id = "contact"></div>
-    <section class = "container-fluid contact bg-primary-alpha text-center">
-      <div class = "container">
-        <h2 class = "text-white mb-3">Get in touch</h2>
-        <a class = "social-media-link text-white my-3">
-          <img 
-            class="social-media-logo" 
-            alt = "linkedin logo" 
-            src="<%= require('./src/assets/images/logos/linkedin-logo.svg') %>"
-            href = "https://www.linkedin.com/in/bradley-baylis/">
-          linkedin.com/in/bradley-baylis
-        </a>
-        <a class = "social-media-link text-white my-3">
-          <img 
-            class="social-media-logo" 
-            alt = "github logo" 
-            src="<%= require('./src/assets/images/logos/github-logo.svg') %>"
-            href = "https://github.com/BLBaylis">
-            github.com/BLBaylis
-        </a>
-        <h4 class = "text-white mt-3 mb-2">...or you can send me an email below!</h4>
-        <form class="contact-form text-white mt-3">
-          <div class="alerts-div position-relative">
-              <div class="alert invisible initial" id="placeholder-alert">.
-              </div>
-              <div
-                  class="alert alert--hidden alert--oldest position-absolute initial"
-                  id="alert1"
-              ></div>
-              <div
-                  class="alert alert--hidden position-absolute"
-                  id="alert2"
-              ></div>
-          </div>
-          <div class="form-inner">
-              <div class="form-group">
-                  <label for="name">Name</label>
-                  <input
-                      class="form-control"
-                      id="name"
-                      placeholder="Name"
-                  />
-              </div>
-              <div class="form-group">
-                  <label for="email">Email address</label>
-                  <input
-                      type="email"
-                      class="form-control"
-                      id="email"
-                      aria-describedby="email"
-                      placeholder="Enter email"
-                  />
-              </div>
-              <div class="form-group">
-                  <label for="message">Message</label>
-                  <textarea
-                      class="form-control"
-                      id="message"
-                      aria-describedby="message"
-                      placeholder="Enter message"
-                      rows="4"
-                  ></textarea>
-              </div>
-              <button type="submit" class="btn submit-btn">
-                  <span>Submit</span>
-                  <div class="lds-ring">
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                      <div></div>
-                  </div>
-              </button>
-          </div>
-        </form>
-      </div>
-    </section>
-
-  <!--  WORKINDTRAINING MODAL -->
-
-  <div class="text-dark modal fade" id="workindModal" tabindex="-1" role="dialog" aria-labelledby="workindModal" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="workindModalLabel">Workind Training</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body text-left">
-          <video class = "pa-1 rounded modal-video" width="100%" height="auto" autoplay = "autoplay" loop muted>
-              <source src="<%= require('./src/assets/videos/video-workindtraining-demo.webm') %>" type="video/webm">
-            <source src="<%= require('./src/assets/videos/video-workindtraining-demo.mp4') %>" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <p>Workind Training provides courses that teach mental health first aid to employers.  Workindtraining.com is 
-            their web presence, which provides information about the business and its services and provides means to get in touch with them,
-            <ul>
-              <li>Fully Responsive Design</li>
-              <li>Scores 96/100 on Google's PageSpeed Insights with compressed, responsive images and gzip delivering fast load times and cahcing speeding up subsequent visits</li>
-              <li>Uses Nodemailer to enable provide a means of contact if the user doesn't have common social media to get in touch with</li>
-            </ul>
-          </p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <a href = "https://www.workindtraining.com" class="btn btn-primary">Live Demo</a>
-        </div>
-      </div>
-    </div>
   </div>
 
+  <!--  PORTFOLIO -->
+  
+  <div class = "nav-link-target" id = "portfolio"></div>
+  <section class = "container-fluid text-white bg-accent-alpha portfolio text-center">
+    <h2 class = "mb-5 mx-auto">Portfolio</h2>
 
-  <!-- TICTACTOE MODAL -->
+    <!-- WORKIND TRAINING -->
 
-  <div class="text-dark modal fade" id="tictactoeModal" tabindex="-1" role="dialog" aria-labelledby="tictactoeModal" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="tictactoeModalLabel">Unbeatable Tictactoe</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+    <div class="project bg-secondary text-left p-4">
+      <h4 class="text-center mb-3">Workind Training</h4>
+      <div class = "project__body">
+        <video class = "project__video project__item" width="100%" height="auto" loop muted controls>
+            <source src="<%= require('./src/assets/videos/video-workindtraining-demo.webm') %>" type="video/webm">
+          <source src="<%= require('./src/assets/videos/video-workindtraining-demo.mp4') %>" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class = "project__text project__item">
+          <p>A marketing website for Workind Training, an organisation that trains practitioners to provide mental health first aid.</p>
+          <ul style = "margin-bottom: 0">
+            <li>Fully Responsive Design</li>
+            <li>Scores 96/100 on Google's PageSpeed Insights with compressed, responsive images and gzip delivering fast load times and cahcing speeding up subsequent visits</li>
+            <li>Uses Nodemailer to get in touch directly from the page via contact form</li>
+          </ul>
         </div>
-        <div class="modal-body text-left">
-          <video class = "pa-1 rounded modal-video" width="100%" height="auto" autoplay = "autoplay" loop muted>
+        <div class = "project__logo-div project__item d-flex justify-content-center align-items-center">
+          <img class="project__logo--left" alt = "bootstrap logo" src="<%= require('./src/assets/images/logos/bootstrap-logo.svg') %>">
+          <img class="project__logo" alt = "node logo" src="<%= require('./src/assets/images/logos/node-logo.svg') %>">
+          <img class="project__logo--right" alt = "nginx logo" src="<%= require('./src/assets/images/logos/nginx-logo.svg') %>">
+        </div>
+        <a class = "project__btn-link--bottom project__item text-white text-center" href = "https://workindtraining.com">
+          <img 
+            class="button-icon" 
+            alt = "brad logo" 
+            src="<%= require('./src/assets/images/logos/logo-sm.svg') %>"
+          >
+          <span class = "btn-text">View Live Demo</span>
+        </a>
+      </div>
+    </div>
+    
+    <!--  TICTACTOE -->
+
+    <div class="project bg-secondary text-left p-4">
+      <h4 class="text-center mb-3">Tic-Tac-Toe Game</h4>
+      <div class = "project__body">
+        <video class = "project__video project__item" width="100%" height="auto" loop muted controls>
             <source src="<%= require('./src/assets/videos/video-tictactoe-demo.webm') %>" type="video/webm">
-            <source src="<%= require('./src/assets/videos/video-tictactoe-demo.mp4') %>" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <p>A tictactoe game made with React and Material-UI, it boasts the following features:
-            <ul>
-              <li>Fully Responsive Design</li>
-              <li>Option to play on 3 x 3, 5 x 5 or 7 x 7 grids</li>
-              <li>Play against an unbeatable computer or play against a friend locally</li>
-              <li>Variety of icons with customisable colours</li>
-            </ul>
-          </p>
+          <source src="<%= require('./src/assets/videos/video-tictactoe-demo.mp4') %>" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class = "project__text project__item">
+          <p>A Tic-Tac-Toe game made with React and Material-UI.</p>
+          <ul style = "margin-bottom: 0">
+            <li>Fully Responsive Design</li>
+            <li>Option to play on 3 x 3, 5 x 5 or 7 x 7 grids</li>
+            <li>Play against an unbeatable computer or play against a friend locally</li>
+            <li>Variety of icons with customisable colours</li>
+          </ul>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary  modal-btnh-100" data-dismiss="modal">Close</button>
-          <a href = "https://github.com/BLBaylis/tic-tac-toe" role="button" class="btn btn-secondary modal-btn">View Repo</a>
-          <a href = "/tictactoe" type="button" class="btn btn-primary modal-btn">Live Demo</a>
+        <div class = "project__logo-div project__item d-flex justify-content-center align-items-center">
+          <img class="project__logo--left" alt = "javascript logo" src="<%= require('./src/assets/images/logos/javascript-logo.svg') %>">
+          <img class="project__logo" alt = "react logo" src="<%= require('./src/assets/images/logos/react-logo.svg') %>">
+          <img class="project__logo--right" alt = "redux logo" src="<%= require('./src/assets/images/logos/redux-logo.svg') %>">
+        </div>
+        <div class = "project__item">
+          <a class = "project__btn-link--half-size text-white text-center mr-4" href = "https://github.com/BLBaylis/tic-tac-toe">
+            <img 
+              class="button-icon" 
+              alt = "github logo" 
+              src="<%= require('./src/assets/images/logos/github-logo.svg') %>"
+            >
+            <span class = "btn-text">View Repo</span>
+          </a>
+          <a class = "project__btn-link--bottom project__btn-link--half-size text-white text-center"  href = "https://bradleybaylis.me/tictactoe/">
+            <img 
+              class="button-icon" 
+              alt = "brad logo" 
+              src="<%= require('./src/assets/images/logos/logo-sm.svg') %>"
+            >
+            <span class = "btn-text">View Live Demo</span>
+          </a>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- FACEBRAIN MODAL -->
+    <!-- FACEBRAIN -->
 
-  <div class="text-dark modal fade" id="facebrainModal" tabindex="-1" role="dialog" aria-labelledby="facebrainModal" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="facebrainModalLabel">FaceBrain</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body text-left">
-          <video class = "pa-1 rounded modal-video" width="100%" height="auto" autoplay = "autoplay" loop muted>
+    <div class="project bg-secondary text-left p-4">
+      <h4 class="text-center mb-3">FaceBrain</h4>
+      <div class = "project__body">
+        <video class = "project__video project__item" width="100%" height="auto" loop muted controls>
             <source src="<%= require('./src/assets/videos/video-facebrain-demo.webm') %>" type="video/webm">
-            <source src="<%= require('./src/assets/videos/video-facebrain-demo.mp4') %>" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <p>This tool uses Clarifai's face recognition API to find faces in submitted URLS.  Features include:
-            <ul>
+          <source src="<%= require('./src/assets/videos/video-facebrain-demo.mp4') %>" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class = "project__text project__item">
+          <p>This tool uses Clarifai's face recognition API to find faces in submitted URLS.</p>
+            <ul style = "margin-bottom: 0">
               <li>Fully Responsive Design</li>
               <li>A PostgreSQL database to store login details and usage statistics</li>
               <li>A Node/Express API for retreiving user profiles from the database and accessing Clarifai's API</li>
               <li>Password hashing and authentication with Bcrypt.js</li>
             </ul>
-          </p>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary  modal-btnh-100" data-dismiss="modal">Close</button>
-          <a href = "https://github.com/BLBaylis/facebrain" role="button" class="btn btn-secondary modal-btn">View Repo</a>
-          <a href = "/facebrain" type="button" class="btn btn-primary modal-btn">Live Demo</a>
+        <div class = "project__logo-div project__item d-flex justify-content-center align-items-center mb-4">
+          <img class="project__logo--left" alt = "react logo" src="<%= require('./src/assets/images/logos/react-logo.svg') %>">
+          <img class="project__logo" alt = "node logo" src="<%= require('./src/assets/images/logos/node-logo.svg') %>">
+          <img class="project__logo--right" alt = "postgres logo" src="<%= require('./src/assets/images/logos/postgres-logo.svg') %>">
         </div>
+        <a class = "project__btn-link project__item text-white text-center  mb-4"  href = "https://bradleybaylis.me/facebrain/">
+          <img 
+            class="button-icon" 
+            alt = "brad logo" 
+            src="<%= require('./src/assets/images/logos/logo-sm.svg') %>"
+          >
+          <span class = "btn-text">View Live Demo</span>
+        </a>
+        <a class = "project__btn-link project__item text-white text-center mr-4" href = "https://github.com/BLBaylis/facebrain-api">
+          <img 
+            class="button-icon" 
+            alt = "github logo" 
+            src="<%= require('./src/assets/images/logos/github-logo.svg') %>"
+          >
+          <span class = "btn-text">View Back End Repo</span>
+        </a>
+        <a class = "project__btn-link--bottom project__item text-white text-center" href = "https://github.com/BLBaylis/facebrain">
+          <img 
+            class="button-icon" 
+            alt = "github logo" 
+            src="<%= require('./src/assets/images/logos/github-logo.svg') %>"
+          >
+          <span class = "btn-text">View Front End Repo</span>
+        </a>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!--  CONTACT -->
+
+  <div class = "nav-link-target" id = "contact"></div>
+  <section class = "container-fluid contact bg-primary-alpha text-center">
+    <div class = "container">
+      <h2 class = "text-white mb-3">Get in touch</h2>
+      <a class = "social-media-link text-white my-3">
+        <img 
+          class="social-media-logo" 
+          alt = "linkedin logo" 
+          src="<%= require('./src/assets/images/logos/linkedin-logo.svg') %>"
+          href = "https://www.linkedin.com/in/bradley-baylis/">
+        linkedin.com/in/bradley-baylis
+      </a>
+      <a class = "social-media-link text-white my-3">
+        <img 
+          class="social-media-logo" 
+          alt = "github logo" 
+          src="<%= require('./src/assets/images/logos/github-logo.svg') %>"
+          href = "https://github.com/BLBaylis">
+          github.com/BLBaylis
+      </a>
+      <h4 class = "text-white mt-3 mb-2">...or you can send me an email below!</h4>
+      <form class="contact-form text-white mt-3">
+        <div class="alerts-div position-relative">
+            <div class="alert invisible initial" id="placeholder-alert">.
+            </div>
+            <div
+                class="alert alert--hidden alert--oldest position-absolute initial"
+                id="alert1"
+            ></div>
+            <div
+                class="alert alert--hidden position-absolute"
+                id="alert2"
+            ></div>
+        </div>
+        <div class="form-inner">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                    class="form-control"
+                    id="name"
+                    placeholder="Name"
+                />
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    aria-describedby="email"
+                    placeholder="Enter email"
+                />
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                    class="form-control"
+                    id="message"
+                    aria-describedby="message"
+                    placeholder="Enter message"
+                    rows="4"
+                ></textarea>
+            </div>
+            <button type="submit" class="btn submit-btn">
+                <span>Submit</span>
+                <div class="lds-ring">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </button>
+        </div>
+      </form>
+    </div>
+  </section>
   <footer class = "position-relative bg-secondary text-white px-4 py-2 d-flex justify-content-center align-items-center">Website created by © Bradley Baylis 2019</footer>
 </body>
 </html>
