@@ -22,12 +22,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2 {
-    font-weight: 500
-}
-
-section {
-    padding-top: 5rem;
-    padding-bottom: 3rem;
+    font-weight: 500;
+    position: relative;
+    top: 8px;
 }
 
 @font-face {
@@ -199,6 +196,13 @@ section {
     right: -100%;
 }
 
+.heading-container {
+    position: relative;
+    top: -25px;
+    color: #fff;
+    margin: 0;
+}
+
 @media (min-aspect-ratio: 850/500) {
     .side-bar {
         min-width: 300px;
@@ -239,7 +243,7 @@ section {
 
 .scroll-link.chevron {
     position: absolute;
-    bottom: 10%;
+    bottom: calc(10% + 25px);
 }
 
 @media (min-width: 497px) {
@@ -261,6 +265,40 @@ section {
 }
 
 /*------------------*/
+/*      BANNER      */
+/*------------------*/
+
+.banner {
+    height: 50px;
+    width: 100%;
+    background: $accent;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    transition: bottom 800ms ease $video-play-time + 800;
+}
+
+.banner:hover {
+    background: #fff;
+    color: $accent;
+    text-decoration: none;
+}
+
+.banner--initial {
+    bottom: -50px;
+}
+
+.cv-icon {
+    //color: $primary;
+    margin-left: 5px;
+    font-size: 25px
+}
+
+
+/*------------------*/
 /*      ABOUT       */
 /*------------------*/
 
@@ -273,10 +311,11 @@ section {
 /*------------------*/
 
 .project {
-    margin-bottom: 1.5rem;
+    max-width: 630px;
+    margin: 3rem auto;
 }
 
-.project__text {
+.project, .project__video, .project__text {
     margin-bottom: 1.5rem;
 }
 
@@ -301,7 +340,7 @@ section {
 }
 
 .project__logo {
-    width: 75px;
+    max-width: 65px;
     max-height: 50px;
     margin: 0 1rem;
 }
@@ -323,6 +362,12 @@ section {
     margin-right: 5px
 }
 
+@media (min-width: 440px) {
+    .project__logo {
+        max-width: 125px;
+    }
+}
+
 @media (min-width: 960px){
 
     .project {
@@ -340,8 +385,6 @@ section {
     .project__video {
         width: 45%;
         margin-right: 1.5rem;
-        margin-bottom: 1.5rem;
-        object-fit:contain
     }
 
     .project__text {
@@ -411,8 +454,17 @@ footer {
     z-index: 2;
 }
 
-@media (min-width: 562px) {
+@media (min-width: 440px) {
     .social-media-link {
-        margin: 0 1rem
+        margin: 0 1rem;
+        width: 40%;
+        max-width: 250px
+    }
+}
+
+
+@media (min-width: 576px) {
+    .social-media-link {
+        width: 42.5%;
     }
 }

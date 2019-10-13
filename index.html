@@ -62,8 +62,8 @@
 
   <section class = "home py-0" id = "home">
     <div class = "side-bar side-bar--initial d-flex flex-column align-items-center text-center">
-      <h1 class = "text-white my-0">
-        <span class = "heading">Bradley Baylis</span>
+      <h1 class = "headings-container">
+        <span class = "heading text-white">Bradley Baylis</span>
         <br/>
         <span class = "subheading">Front End Developer</span>
       </h1>
@@ -71,14 +71,17 @@
         <img class = "mx-auto" alt = "downwards pointing arrow" src="<%= require('./src/assets/images/logos/chevron.svg') %>">
       </a>
     </div>
+    <a rel = "noopener noreferrer" class="banner banner--initial" href = "<%= require('./src/assets/Bradley-Baylis-CV.pdf') %>" target = "_blank">
+      Hiring? Check out my CV! <span class="cv-icon">➜</span>
+    </a>
   </section>
 
   <!--  ABOUT -->
 
   <div class = "nav-link-target" id = "about"></div>
-  <div class="container-fluid text-left about bg-secondary-alpha text-white">
-    <section class = "about-content mx-auto">
-        <h2 class = "text-center mb-3">About Me</h2>
+  <section class="container-fluid text-left about bg-secondary-alpha text-white py-5">
+    <div class = "about-content mx-auto">
+        <h2 class = "text-center mb-5">About Me</h2>
         <p class = "px-2">Hi! My name is Brad and I am a self-taught front end developer
            based near London. I particularly relish working with Javascript and React.js. I consider
             myself an 'eternal student' and enjoy expanding my knowledge and challenging myself
@@ -121,15 +124,58 @@
             <span>🧘</span>
           </li>
         </ul>
-        <a rel = "noopener noreferrer" class = "btn btn-block bg-accent text-white mt-md-5" href = "<%= require('./src/assets/Bradley-Baylis-CV.pdf') %>" target = "_blank">My CV</a>
+      </div>
     </section>
-  </div>
 
   <!--  PORTFOLIO -->
   
   <div class = "nav-link-target" id = "portfolio"></div>
-  <section class = "container-fluid text-white bg-accent-alpha portfolio text-center">
+  <section class = "container-fluid text-white bg-accent-alpha portfolio text-center py-5">
     <h2 class = "mb-5 mx-auto">Portfolio</h2>
+
+    <!-- FEEDBACK FAST -->
+
+    <div class="project bg-secondary text-left p-4">
+      <h4 class="text-center mb-3">Feedback Fast (Work in Progress)</h4>
+      <div class = "project__body">
+        <video class = "project__video project__item" width="100%" height="auto" loop muted controls>
+          <source src="<%= require('./src/assets/videos/video-feedback-fast-demo.webm') %>" type="video/webm">
+          <source src="<%= require('./src/assets/videos/video-feedback-fast-demo.mp4') %>" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class = "project__text project__item">
+          <p>Buy credits. Send email surveys.  Get feedback, fast.</p>
+          <ul style = "margin-bottom: 0">
+            <li>Secure authentication with Google or local registration</li>
+            <li>Stripe's Charges API enables payments for survey credits</li>
+            <li>Survey and account info stored safely on MongoDB</li>
+          </ul>
+        </div>
+        <div class = "project__logo-div project__item d-flex justify-content-center align-items-center">
+          <img class="project__logo--left" alt = "react logo" src="<%= require('./src/assets/images/logos/react-logo.svg') %>">
+          <img class="project__logo" alt = "node logo" src="<%= require('./src/assets/images/logos/node-logo.svg') %>">
+          <img class="project__logo--right" alt = "mongo logo" src="<%= require('./src/assets/images/logos/mongo-logo.svg') %>">
+        </div>
+        <div class = "project__item">
+          <a class = "project__btn-link--half-size text-white text-center mr-4" href = "https://github.com/BLBaylis/feedback-fast">
+            <img 
+              class="button-icon" 
+              alt = "github logo" 
+              src="<%= require('./src/assets/images/logos/github-logo.svg') %>"
+            >
+            <span class = "btn-text">View Repo</span>
+          </a>
+          <a class = "project__btn-link--bottom project__btn-link--half-size text-white text-center"  href = "http://feedback-fast.herokuapp.com/">
+            <img 
+              class="button-icon" 
+              alt = "feedback-fast logo" 
+              src="<%= require('./src/assets/images/logos/feedback-fast-logo.svg') %>"
+            >
+            <span class = "btn-text">View Live Demo</span>
+          </a>
+        </div>
+      </div>
+    </div>
 
     <!-- WORKIND TRAINING -->
 
@@ -234,7 +280,7 @@
           <img class="project__logo" alt = "node logo" src="<%= require('./src/assets/images/logos/node-logo.svg') %>">
           <img class="project__logo--right" alt = "postgres logo" src="<%= require('./src/assets/images/logos/postgres-logo.svg') %>">
         </div>
-        <a class = "project__btn-link project__item text-white text-center  mb-4"  href = "https://bradleybaylis.me/facebrain/">
+        <a class = "project__btn-link project__item text-white text-center mb-4"  href = "https://bradleybaylis.me/facebrain/">
           <img 
             class="button-icon" 
             alt = "brad logo" 
@@ -265,26 +311,28 @@
   <!--  CONTACT -->
 
   <div class = "nav-link-target" id = "contact"></div>
-  <section class = "container-fluid contact bg-primary-alpha text-center">
+  <section class = "container-fluid contact bg-primary-alpha text-center pt-5 pb-5">
     <div class = "container">
-      <h2 class = "text-white mb-3">Get in touch</h2>
-      <a class = "social-media-link text-white my-3">
-        <img 
-          class="social-media-logo" 
-          alt = "linkedin logo" 
-          src="<%= require('./src/assets/images/logos/linkedin-logo.svg') %>"
-          href = "https://www.linkedin.com/in/bradley-baylis/">
-        linkedin.com/in/bradley-baylis
-      </a>
-      <a class = "social-media-link text-white my-3">
-        <img 
-          class="social-media-logo" 
-          alt = "github logo" 
-          src="<%= require('./src/assets/images/logos/github-logo.svg') %>"
-          href = "https://github.com/BLBaylis">
-          github.com/BLBaylis
-      </a>
-      <h4 class = "text-white mt-3 mb-2">...or you can send me an email below!</h4>
+      <h2 class = "text-white mb-5">Get in touch</h2>
+      <div>
+        <a class = "social-media-link text-white mb-3" href = "https://www.linkedin.com/in/bradley-baylis/">
+          <img 
+            class="social-media-logo" 
+            alt = "linkedin logo" 
+            src="<%= require('./src/assets/images/logos/linkedin-logo.svg') %>"
+            >
+          bradley-baylis
+        </a>
+        <a class = "social-media-link text-white" href = "https://github.com/BLBaylis">
+          <img 
+            class="social-media-logo" 
+            alt = "github logo" 
+            src="<%= require('./src/assets/images/logos/github-logo.svg') %>"
+            >
+            BLBaylis
+        </a>
+    </div>
+      <h4 class = "text-white my-3">...or you can send me an email below!</h4>
       <form class="contact-form text-white mt-3">
         <div class="alerts-div position-relative">
             <div class="alert invisible initial" id="placeholder-alert">.
