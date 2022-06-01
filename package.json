@@ -31,7 +31,7 @@
         "popper.js": "^1.15.0",
         "regenerator": "^0.14.1",
         "responsive-loader": "^1.2.0",
-        "sharp": "^0.22.1"
+        "sharp": "^0.30.5"
     },
     "devDependencies": {
         "ajv": "^6.3.0",
